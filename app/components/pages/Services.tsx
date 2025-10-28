@@ -1,5 +1,6 @@
 import { ScrollReveal } from '../ScrollReveal';
 import { ServiceCard } from '../ServiceCard';
+import { Section } from '../ui/section';
 import { 
   Target, 
   TrendingUp, 
@@ -19,16 +20,15 @@ interface ServicesProps {
 export function Services({ onNavigate }: ServicesProps) {
   const { navigate } = useNavigation();
 
-  const handleBooking = () => {
-    onNavigate('booking');
-    navigate('booking');
+  const handleNavigate = (page: Page) => {
+    onNavigate(page);
+    navigate(page);
   };
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-600 to-blue-600 text-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <Section background="gradient" containerSize="lg">
           <ScrollReveal>
             <h1 className="text-white mb-6">Mes Services</h1>
           </ScrollReveal>
@@ -37,12 +37,10 @@ export function Services({ onNavigate }: ServicesProps) {
               Des accompagnements sur mesure pour chaque étape de votre parcours freelance
             </p>
           </ScrollReveal>
-        </div>
-      </section>
+      </Section>
 
       {/* Services Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section containerSize="lg">
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-gray-900 mb-4">Choisissez votre formule</h2>
@@ -57,17 +55,15 @@ export function Services({ onNavigate }: ServicesProps) {
               <ServiceCard
                 key={index}
                 {...service}
-                onBook={handleBooking}
+                onBook={() => handleNavigate('booking')}
                 delay={index * 0.1}
               />
             ))}
           </div>
-        </div>
-      </section>
+      </Section>
 
       {/* How It Works */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section containerSize="lg" background="gray">
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-gray-900 mb-4">Comment ça marche ?</h2>
@@ -111,12 +107,10 @@ export function Services({ onNavigate }: ServicesProps) {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
+      </Section>
 
       {/* FAQ Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section containerSize="lg">
           <ScrollReveal>
             <h2 className="text-center text-gray-900 mb-12">Questions fréquentes</h2>
           </ScrollReveal>
@@ -156,12 +150,10 @@ export function Services({ onNavigate }: ServicesProps) {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
+      </Section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <Section background="gradient" containerSize="lg">
           <ScrollReveal>
             <h2 className="text-white mb-6">Prêt à passer à l'action ?</h2>
           </ScrollReveal>
@@ -172,14 +164,13 @@ export function Services({ onNavigate }: ServicesProps) {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <button
-              onClick={handleBooking}
+              onClick={() => handleNavigate('booking')}
               className="inline-flex items-center px-8 py-4 bg-white text-purple-600 rounded-lg hover:bg-gray-50 transition-colors"
             >
               Réserver ma séance gratuite
             </button>
           </ScrollReveal>
-        </div>
-      </section>
+      </Section>
     </div>
   );
 }

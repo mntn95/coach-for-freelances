@@ -11,9 +11,9 @@ interface WorkshopsProps {
 export function Workshops({ onNavigate }: WorkshopsProps) {
   const { navigate } = useNavigation();
 
-  const handleBooking = () => {
-    onNavigate('booking');
-    navigate('booking');
+  const handleNavigate = (page: Page) => {
+    onNavigate(page);
+    navigate(page);
   };
 
   return (
@@ -82,7 +82,7 @@ export function Workshops({ onNavigate }: WorkshopsProps) {
               <WorkshopCard
                 key={index}
                 {...workshop}
-                onBook={handleBooking}
+                onBook={() => handleNavigate('booking')}
                 delay={index * 0.1}
               />
             ))}
@@ -137,23 +137,7 @@ export function Workshops({ onNavigate }: WorkshopsProps) {
           </ScrollReveal>
 
           <div className="space-y-6">
-            {[
-              {
-                name: 'Marc Lefebvre',
-                role: 'Développeur React',
-                text: 'L\'atelier sur le pricing m\'a ouvert les yeux. J\'ai augmenté mon TJM de 350€ à 600€ deux semaines après. Meilleur ROI de ma vie.'
-              },
-              {
-                name: 'Julie Moreau',
-                role: 'Consultante DevOps',
-                text: 'Super format : concret, actionnable, avec d\'autres freelances qui vivent les mêmes challenges. Les templates fournis sont gold.'
-              },
-              {
-                name: 'Kevin Dufour',
-                role: 'Développeur Fullstack',
-                text: 'Je suis très introverti et l\'idée de prospecter me terrorisait. L\'atelier prospection m\'a donné une méthode simple qui fonctionne. J\'ai signé 2 clients le mois suivant.'
-              }
-            ].map((testimonial, index) => (
+            {workshopTestimonials.map((testimonial, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-purple-300 transition-colors">
                   <p className="text-gray-600 italic mb-4">"{testimonial.text}"</p>
@@ -186,7 +170,7 @@ export function Workshops({ onNavigate }: WorkshopsProps) {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <button
-              onClick={handleBooking}
+              onClick={() => handleNavigate('booking')}
               className="inline-flex items-center px-8 py-4 bg-white text-purple-600 rounded-lg hover:bg-gray-50 transition-colors"
             >
               Réserver ma place

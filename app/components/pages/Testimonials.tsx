@@ -1,5 +1,6 @@
 import { ScrollReveal } from '../ScrollReveal';
 import { TestimonialCard } from '../TestimonialCard';
+import { Section } from '../ui/section';
 import { Image } from '../ui/image';
 import { extendedTestimonials } from '@/data/testimonials';
 
@@ -14,7 +15,7 @@ export function Testimonials() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-600 to-blue-600 text-white py-20">
+      <Section background="gradient" containerSize="lg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h1 className="text-white mb-6">Témoignages</h1>
@@ -25,10 +26,10 @@ export function Testimonials() {
             </p>
           </ScrollReveal>
         </div>
-      </section>
+      </Section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <Section background="gray" containerSize="md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -41,10 +42,10 @@ export function Testimonials() {
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Testimonials Grid */}
-      <section className="py-20">
+      <Section containerSize="lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -65,10 +66,10 @@ export function Testimonials() {
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Success Stories */}
-      <section className="py-20 bg-gray-50">
+      <Section background="gray" containerSize="lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -139,10 +140,10 @@ export function Testimonials() {
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Video Testimonials Placeholder */}
-      <section className="py-20">
+      <Section containerSize="lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -185,7 +186,7 @@ export function Testimonials() {
             </p>
           </ScrollReveal>
         </div>
-      </section>
+      </Section>
     </div>
   );
 }

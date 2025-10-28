@@ -1,0 +1,33 @@
+import { Button } from '../../ui/button';
+import { NavigationItem } from '../../ui/NavigationItem';
+import { NAV_ITEMS, BOOKING_PAGE, NAV_LABELS } from '@/constants/navigation';
+import type { Page } from '@/types/navigation';
+
+interface DesktopNavigationProps {
+  currentPage: Page;
+  onNavigate: (page: Page) => void;
+}
+
+export function DesktopNavigation({ currentPage, onNavigate }: DesktopNavigationProps) {
+  return (
+    <nav className="hidden md:flex items-center space-x-8">
+      {NAV_ITEMS.map((item) => (
+        <NavigationItem
+          key={item.page}
+          page={item.page}
+          label={item.label}
+          currentPage={currentPage}
+          onNavigate={onNavigate}
+          variant="desktop"
+        />
+      ))}
+      <Button
+        onClick={() => onNavigate(BOOKING_PAGE)}
+        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+        aria-label={`Navigate to ${NAV_LABELS.BOOKING} page`}
+      >
+        {NAV_LABELS.BOOKING}
+      </Button>
+    </nav>
+  );
+}
