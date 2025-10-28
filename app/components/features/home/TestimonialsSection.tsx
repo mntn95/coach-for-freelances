@@ -1,6 +1,7 @@
 import { ScrollReveal } from '../../ScrollReveal';
 import { TestimonialCard } from '../../TestimonialCard';
 import { testimonials } from '@/data/testimonials';
+import { homeData } from '@/data/home';
 import type { Page } from '@/types/navigation';
 
 interface TestimonialsSectionProps {
@@ -17,9 +18,9 @@ export function TestimonialsSection({ onNavigate }: TestimonialsSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-4">Ils ont doublé leurs revenus</h2>
+            <h2 className="text-gray-900 mb-4">{homeData.testimonials.title}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Des freelances comme vous qui ont franchi le cap
+              {homeData.testimonials.subtitle}
             </p>
           </div>
         </ScrollReveal>
@@ -40,7 +41,7 @@ export function TestimonialsSection({ onNavigate }: TestimonialsSectionProps) {
               onClick={() => handleNavigate('testimonials')}
               className="text-purple-600 hover:text-purple-700 underline"
             >
-              Lire tous les témoignages →
+              {homeData.testimonials.linkText}
             </button>
           </div>
         </ScrollReveal>

@@ -1,6 +1,7 @@
 import { ScrollReveal } from '../../ScrollReveal';
 import { ServiceCard } from '../../ServiceCard';
 import { featuredServices } from '@/data/services';
+import { homeData } from '@/data/home';
 import type { Page } from '@/types/navigation';
 
 interface ServicesSectionProps {
@@ -17,9 +18,9 @@ export function ServicesSection({ onNavigate }: ServicesSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-4">Comment je peux vous aider</h2>
+            <h2 className="text-gray-900 mb-4">{homeData.services.title}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Des accompagnements adaptés à votre situation et vos objectifs
+              {homeData.services.subtitle}
             </p>
           </div>
         </ScrollReveal>
@@ -45,7 +46,7 @@ export function ServicesSection({ onNavigate }: ServicesSectionProps) {
               onClick={() => handleNavigate('services')}
               className="text-purple-600 hover:text-purple-700 underline"
             >
-              Voir tous les services →
+              {homeData.services.linkText}
             </button>
           </div>
         </ScrollReveal>
