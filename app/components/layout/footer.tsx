@@ -1,6 +1,7 @@
 import { Linkedin, Mail, Phone } from 'lucide-react';
 import { Image } from '../ui/image';
 import type { Page } from '@/types/navigation';
+import { NAV_LABELS } from '@/constants/navigation';
 
 interface FooterProps {
   onNavigate: (page: Page) => void;
@@ -42,7 +43,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   onClick={() => handleNavigate('about')}
                   className="text-sm hover:text-purple-400 transition-colors"
                 >
-                  À propos
+                  {NAV_LABELS.ABOUT}
                 </button>
               </li>
               <li>
@@ -50,7 +51,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   onClick={() => handleNavigate('services')}
                   className="text-sm hover:text-purple-400 transition-colors"
                 >
-                  Services
+                  {NAV_LABELS.SERVICES}
                 </button>
               </li>
               <li>
@@ -58,7 +59,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   onClick={() => handleNavigate('workshops')}
                   className="text-sm hover:text-purple-400 transition-colors"
                 >
-                  Ateliers
+                  {NAV_LABELS.WORKSHOPS}
                 </button>
               </li>
               <li>
@@ -66,7 +67,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   onClick={() => handleNavigate('testimonials')}
                   className="text-sm hover:text-purple-400 transition-colors"
                 >
-                  Témoignages
+                  {NAV_LABELS.TESTIMONIALS}
                 </button>
               </li>
               <li>
@@ -74,7 +75,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   onClick={() => handleNavigate('booking')}
                   className="text-sm hover:text-purple-400 transition-colors"
                 >
-                  Réserver un appel
+                  {NAV_LABELS.BOOKING}
                 </button>
               </li>
             </ul>
@@ -113,7 +114,7 @@ export function Footer({ onNavigate }: FooterProps) {
             onClick={() => handleNavigate('legal')}
             className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
           >
-            Mentions légales & Confidentialité
+            {NAV_LABELS.LEGAL}
           </button>
         </div>
       </div>

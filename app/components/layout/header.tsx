@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Image } from '../ui/image';
 import type { Page } from '@/types/navigation';
+import { NAV_ITEMS, BOOKING_PAGE, NAV_LABELS } from '@/constants/navigation';
 
 interface HeaderProps {
   currentPage: Page;
@@ -11,14 +12,6 @@ interface HeaderProps {
 
 export function Header({ currentPage, onNavigate }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navItems = [
-    { label: 'Accueil', page: 'home' as Page },
-    { label: 'À propos', page: 'about' as Page },
-    { label: 'Services', page: 'services' as Page },
-    { label: 'Ateliers', page: 'workshops' as Page },
-    { label: 'Témoignages', page: 'testimonials' as Page },
-  ];
 
   const handleNavigate = (page: Page) => {
     onNavigate(page);
@@ -47,7 +40,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.page}
                 onClick={() => handleNavigate(item.page)}
@@ -61,10 +54,10 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               </button>
             ))}
             <Button
-              onClick={() => handleNavigate('booking')}
+              onClick={() => handleNavigate(BOOKING_PAGE)}
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
             >
-              Réserver un appel
+              {NAV_LABELS.BOOKING}
             </Button>
           </nav>
 
@@ -80,7 +73,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <nav className="md:hidden py-4 space-y-4 border-t border-gray-200">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.page}
                 onClick={() => handleNavigate(item.page)}
@@ -95,10 +88,10 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             ))}
             <div className="px-4 pt-2">
               <Button
-                onClick={() => handleNavigate('booking')}
+                onClick={() => handleNavigate(BOOKING_PAGE)}
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
               >
-                Réserver un appel
+                {NAV_LABELS.BOOKING}
               </Button>
             </div>
           </nav>
