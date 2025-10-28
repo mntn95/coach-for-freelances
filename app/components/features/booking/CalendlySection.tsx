@@ -1,5 +1,5 @@
 import { bookingData } from "@/data/booking";
-import { isClient, safeDocument } from "@/utils/ssr";
+import { isClient, safeDocument } from "@/lib/utils";
 import { Calendar } from "lucide-react";
 import { useEffect } from "react";
 import { AnimatedSection } from "../../ui/animated";
