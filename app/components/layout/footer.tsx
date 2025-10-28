@@ -1,6 +1,6 @@
 import { Linkedin, Mail, Phone } from 'lucide-react';
 import { Image } from '../ui/image';
-import type { Page } from '../../page';
+import type { Page } from '@/types/navigation';
 
 interface FooterProps {
   onNavigate: (page: Page) => void;

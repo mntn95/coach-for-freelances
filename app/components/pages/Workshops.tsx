@@ -1,6 +1,6 @@
 import { ScrollReveal } from '../ScrollReveal';
 import { WorkshopCard } from '../WorkshopCard';
-import type { Page } from '../../page';
+import type { Page } from '@/types/navigation';
 
 interface WorkshopsProps {
   onNavigate: (page: Page) => void;

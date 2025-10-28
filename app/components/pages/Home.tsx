@@ -4,7 +4,7 @@ import { ServiceCard } from '../ServiceCard';
 import { TestimonialCard } from '../TestimonialCard';
 import { Image } from '../ui/image';
 import { Target, TrendingUp, Users, Zap } from 'lucide-react';
-import type { Page } from '../../page';
+import type { Page } from '@/types/navigation';
 
 interface HomeProps {
   onNavigate: (page: Page) => void;

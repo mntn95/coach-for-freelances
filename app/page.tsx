@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-
 import { Home } from "./components/pages/Home";
 import { About } from "./components/pages/About";
 import { Services } from "./components/pages/Services";
@@ -13,18 +12,11 @@ import { Legal } from "./components/pages/Legal";
 import { Header } from "./components/layout/header";
 import { Footer } from "./components/layout/footer";
 import { Toaster } from "./components/ui/sonner";
-
-export type Page =
-  | "home"
-  | "about"
-  | "services"
-  | "workshops"
-  | "testimonials"
-  | "booking"
-  | "legal";
+import type { Page } from "@/types/navigation";
+import { DEFAULT_PAGE } from "@/types/navigation";
 
 export default function AppPage() {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
+  const [currentPage, setCurrentPage] = useState<Page>(DEFAULT_PAGE);
 
   const renderPage = () => {
     switch (currentPage) {

@@ -8,7 +8,7 @@ import {
   Calendar,
   MessageCircle 
 } from 'lucide-react';
-import type { Page } from '../../page';
+import type { Page } from '@/types/navigation';
 
 interface ServicesProps {
   onNavigate: (page: Page) => void;

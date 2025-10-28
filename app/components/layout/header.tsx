@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Image } from '../ui/image';
-import type { Page } from '../../page';
+import type { Page } from '@/types/navigation';
 
 interface HeaderProps {
   currentPage: Page;
