@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
-import { Calendar } from 'lucide-react';
-import { AnimatedSection } from '../../ui/animated';
-import { bookingData } from '@/data/booking';
-import { isClient, safeDocument } from '@/utils/ssr';
+import { bookingData } from "@/data/booking";
+import { isClient, safeDocument } from "@/utils/ssr";
+import { Calendar } from "lucide-react";
+import { useEffect } from "react";
+import { AnimatedSection } from "../../ui/animated";
 
 export function CalendlySection() {
   useEffect(() => {
     // Skip if not on client side
     if (!isClient) return;
-    
+
     const doc = safeDocument();
     if (!doc) return;
 
@@ -17,8 +17,8 @@ export function CalendlySection() {
     if (existingScript) return;
 
     // Load Calendly widget script
-    const script = doc.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    const script = doc.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
     doc.body.appendChild(script);
 
@@ -48,13 +48,15 @@ export function CalendlySection() {
             <div
               className="calendly-inline-widget"
               data-url={bookingData.calendly.url}
-              style={{ minWidth: '320px', height: '700px' }}
+              style={{ minWidth: "320px", height: "700px" }}
             ></div>
-            
+
             {/* Placeholder when Calendly is not configured */}
             <div className="text-center py-20 border-2 border-dashed border-gray-300 rounded-lg">
               <Calendar className="mx-auto text-gray-400 mb-4" size={48} />
-              <h3 className="text-gray-900 mb-2">{bookingData.calendly.placeholder.title}</h3>
+              <h3 className="text-gray-900 mb-2">
+                {bookingData.calendly.placeholder.title}
+              </h3>
               <p className="text-gray-600 mb-6 max-w-md mx-auto">
                 {bookingData.calendly.placeholder.description}
               </p>

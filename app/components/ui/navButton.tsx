@@ -1,4 +1,4 @@
-import type { Page } from '@/types/navigation';
+import type { Page } from "@/types/navigation";
 
 interface NavigationButtonProps {
   page: Page;
@@ -6,7 +6,11 @@ interface NavigationButtonProps {
   onClick: (page: Page) => void;
 }
 
-export function NavigationButton({ page, label, onClick }: NavigationButtonProps) {
+export function NavigationButton({
+  page,
+  label,
+  onClick,
+}: NavigationButtonProps) {
   const handleClick = () => {
     onClick(page);
   };

@@ -1,5 +1,5 @@
-import { AnimatedSection } from '../../ui/animated';
-import { aboutData } from '@/data/about';
+import { aboutData } from "@/data/about";
+import { AnimatedSection } from "../../ui/animated";
 
 export function ValuesSection() {
   return (

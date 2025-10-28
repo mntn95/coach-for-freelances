@@ -1,31 +1,31 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import NextImage from 'next/image'
-import { getImageProps } from '@/config/images'
+import { getImageProps } from "@/config/images";
+import NextImage from "next/image";
+import React, { useState } from "react";
 
 const ERROR_IMG_SRC =
-  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg=='
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg==";
 
 interface ImageProps {
-  src: string
-  alt: string
-  className?: string
-  width?: number
-  height?: number
-  fill?: boolean
-  sizes?: string
-  priority?: boolean
-  quality?: number
-  style?: React.CSSProperties
-  onError?: () => void
-  context?: 'hero' | 'logo' | 'card' | 'below-fold'
+  src: string;
+  alt: string;
+  className?: string;
+  width?: number;
+  height?: number;
+  fill?: boolean;
+  sizes?: string;
+  priority?: boolean;
+  quality?: number;
+  style?: React.CSSProperties;
+  onError?: () => void;
+  context?: "hero" | "logo" | "card" | "below-fold";
 }
 
 export function Image({
   src,
   alt,
-  className = '',
+  className = "",
   width,
   height,
   fill = false,
@@ -34,17 +34,17 @@ export function Image({
   quality,
   style,
   onError,
-  context = 'below-fold',
+  context = "below-fold",
 }: ImageProps) {
-  const [didError, setDidError] = useState(false)
-  
+  const [didError, setDidError] = useState(false);
+
   // Get optimized props based on context
-  const optimizedProps = getImageProps(context)
+  const optimizedProps = getImageProps(context);
 
   const handleError = () => {
-    setDidError(true)
-    onError?.()
-  }
+    setDidError(true);
+    onError?.();
+  };
 
   if (didError) {
     return (
@@ -62,7 +62,7 @@ export function Image({
           />
         </div>
       </div>
-    )
+    );
   }
 
   // Build common props
@@ -75,7 +75,7 @@ export function Image({
     placeholder: optimizedProps.placeholder,
     blurDataURL: optimizedProps.blurDataURL,
     onError: handleError,
-  }
+  };
 
   // Build conditional props based on usage pattern
   const conditionalProps = (() => {
@@ -86,26 +86,26 @@ export function Image({
         height,
         className,
         style,
-      }
+      };
     }
-    
+
     if (fill) {
       // Fill container
       return {
         fill: true,
         sizes,
         className: "object-cover",
-      }
+      };
     }
-    
+
     // Default fallback
     return {
       width: 800,
       height: 600,
       className,
       style,
-    }
-  })()
+    };
+  })();
 
   // Render with fill wrapper if needed
   if (fill) {
@@ -113,10 +113,9 @@ export function Image({
       <div className={`relative ${className}`} style={style}>
         <NextImage {...commonProps} {...conditionalProps} />
       </div>
-    )
+    );
   }
 
   // Single NextImage component for all cases
-  return <NextImage {...commonProps} {...conditionalProps} />
+  return <NextImage {...commonProps} {...conditionalProps} />;
 }
-

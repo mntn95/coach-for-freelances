@@ -1,5 +1,5 @@
-import { Linkedin, Mail, Phone } from 'lucide-react';
-import { contactInfo } from '@/data/contact';
+import { contactInfo } from "@/data/contact";
+import { Linkedin, Mail, Phone } from "lucide-react";
 
 export function ContactSection() {
   return (
@@ -8,8 +8,8 @@ export function ContactSection() {
       <ul className="space-y-3">
         <li className="flex items-center space-x-3 text-sm">
           <Mail size={16} className="text-purple-400" />
-          <a 
-            href={`mailto:${contactInfo.email}`} 
+          <a
+            href={`mailto:${contactInfo.email}`}
             className="hover:text-purple-400 transition-colors"
             aria-label={`Send email to ${contactInfo.email}`}
           >
@@ -22,8 +22,8 @@ export function ContactSection() {
         </li>
         <li className="flex items-center space-x-3 text-sm">
           <Linkedin size={16} className="text-purple-400" />
-          <a 
-            href={contactInfo.linkedin} 
+          <a
+            href={contactInfo.linkedin}
             className="hover:text-purple-400 transition-colors"
             aria-label="Visit LinkedIn profile"
             target="_blank"

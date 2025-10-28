@@ -1,7 +1,13 @@
-import { motion } from 'motion/react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { LucideIcon } from 'lucide-react';
+import { LucideIcon } from "lucide-react";
+import { motion } from "motion/react";
+import { Button } from "./ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 interface ServiceCardProps {
   icon: LucideIcon;
@@ -13,14 +19,14 @@ interface ServiceCardProps {
   delay?: number;
 }
 
-export function ServiceCard({ 
-  icon: Icon, 
-  title, 
-  description, 
-  price, 
-  features, 
+export function ServiceCard({
+  icon: Icon,
+  title,
+  description,
+  price,
+  features,
   onBook,
-  delay = 0 
+  delay = 0,
 }: ServiceCardProps) {
   return (
     <motion.div
@@ -62,7 +68,7 @@ export function ServiceCard({
               </li>
             ))}
           </ul>
-          <Button 
+          <Button
             onClick={onBook}
             className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
           >

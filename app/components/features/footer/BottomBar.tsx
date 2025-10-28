@@ -1,7 +1,7 @@
-import { NavigationButton } from '../../ui/NavigationButton';
-import { NAV_LABELS } from '@/constants/navigation';
-import { brandInfo } from '@/data/brand';
-import type { Page } from '@/types/navigation';
+import { NAV_LABELS } from "@/constants/navigation";
+import { brandInfo } from "@/data/brand";
+import type { Page } from "@/types/navigation";
+import { NavigationButton } from "../../ui/navButton";
 
 interface BottomBarProps {
   onNavigate: (page: Page) => void;

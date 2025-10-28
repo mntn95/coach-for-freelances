@@ -1,8 +1,8 @@
-import { BookingHeroSection } from '../features/booking/BookingHeroSection';
-import { InfoSection } from '../features/booking/InfoSection';
-import { ExpectationsSection } from '../features/booking/ExpectationsSection';
-import { CalendlySection } from '../features/booking/CalendlySection';
-import { FAQSection } from '../features/booking/FAQSection';
+import { BookingHeroSection } from "../features/booking/BookingHeroSection";
+import { CalendlySection } from "../features/booking/CalendlySection";
+import { ExpectationsSection } from "../features/booking/ExpectationsSection";
+import { FAQSection } from "../features/booking/FAQSection";
+import { InfoSection } from "../features/booking/InfoSection";
 
 export function Booking() {
   return (

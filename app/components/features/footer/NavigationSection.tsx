@@ -1,6 +1,6 @@
-import { NavigationButton } from '../../ui/NavigationButton';
-import { NAV_LABELS } from '@/constants/navigation';
-import type { Page } from '@/types/navigation';
+import { NAV_LABELS } from "@/constants/navigation";
+import type { Page } from "@/types/navigation";
+import { NavigationButton } from "../../ui/navButton";
 
 interface NavigationSectionProps {
   onNavigate: (page: Page) => void;
@@ -8,11 +8,11 @@ interface NavigationSectionProps {
 
 export function NavigationSection({ onNavigate }: NavigationSectionProps) {
   const navigationItems: Array<{ page: Page; label: string }> = [
-    { page: 'about', label: NAV_LABELS.ABOUT },
-    { page: 'services', label: NAV_LABELS.SERVICES },
-    { page: 'workshops', label: NAV_LABELS.WORKSHOPS },
-    { page: 'testimonials', label: NAV_LABELS.TESTIMONIALS },
-    { page: 'booking', label: NAV_LABELS.BOOKING }
+    { page: "about", label: NAV_LABELS.ABOUT },
+    { page: "services", label: NAV_LABELS.SERVICES },
+    { page: "workshops", label: NAV_LABELS.WORKSHOPS },
+    { page: "testimonials", label: NAV_LABELS.TESTIMONIALS },
+    { page: "booking", label: NAV_LABELS.BOOKING },
   ];
 
   return (

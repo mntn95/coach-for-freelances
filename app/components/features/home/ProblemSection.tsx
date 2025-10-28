@@ -1,5 +1,5 @@
-import { ScrollReveal } from '../../ScrollReveal';
-import { homeData } from '@/data/home';
+import { homeData } from "@/data/home";
+import { ScrollReveal } from "../../ScrollReveal";
 
 export function ProblemSection() {
   return (

@@ -1,6 +1,6 @@
-import { AnimatedSection } from '../../ui/animated';
-import { CheckCircle2 } from 'lucide-react';
-import { aboutData } from '@/data/about';
+import { aboutData } from "@/data/about";
+import { CheckCircle2 } from "lucide-react";
+import { AnimatedSection } from "../../ui/animated";
 
 export function ExpertiseSection() {
   return (
@@ -9,7 +9,9 @@ export function ExpertiseSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <AnimatedSection>
-              <h2 className="text-gray-900 mb-6">{aboutData.expertise.title}</h2>
+              <h2 className="text-gray-900 mb-6">
+                {aboutData.expertise.title}
+              </h2>
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
@@ -22,7 +24,10 @@ export function ExpertiseSection() {
               {aboutData.expertise.skills.map((skill, index) => (
                 <AnimatedSection key={index} delay={0.2 + index * 0.05}>
                   <div className="flex items-start">
-                    <CheckCircle2 className="text-green-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
+                    <CheckCircle2
+                      className="text-green-500 mr-3 flex-shrink-0 mt-0.5"
+                      size={20}
+                    />
                     <span className="text-gray-700">{skill}</span>
                   </div>
                 </AnimatedSection>
@@ -32,7 +37,9 @@ export function ExpertiseSection() {
 
           <div>
             <AnimatedSection delay={0.3}>
-              <h2 className="text-gray-900 mb-6">{aboutData.expertise.certifications.title}</h2>
+              <h2 className="text-gray-900 mb-6">
+                {aboutData.expertise.certifications.title}
+              </h2>
             </AnimatedSection>
 
             <div className="space-y-6">

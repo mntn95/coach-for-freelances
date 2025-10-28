@@ -1,5 +1,5 @@
-import { AnimatedSection } from '../../ui/animated';
-import { bookingData } from '@/data/booking';
+import { bookingData } from "@/data/booking";
+import { AnimatedSection } from "../../ui/animated";
 
 export function InfoSection() {
   return (

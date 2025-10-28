@@ -1,8 +1,6 @@
-import { Menu, X } from 'lucide-react';
-import { Button } from '../../ui/button';
-import { NavigationItem } from '../../ui/NavigationItem';
-import { NAV_ITEMS, BOOKING_PAGE, NAV_LABELS } from '@/constants/navigation';
-import type { Page } from '@/types/navigation';
+import { NAV_ITEMS } from "@/constants/navigation";
+import type { Page } from "@/types/navigation";
+import { Button } from "../../ui/button";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -11,7 +9,12 @@ interface MobileMenuProps {
   onNavigate: (page: Page) => void;
 }
 
-export function MobileMenu({ isOpen, onToggle, currentPage, onNavigate }: MobileMenuProps) {
+export function MobileMenu({
+  isOpen,
+  onToggle,
+  currentPage,
+  onNavigate,
+}: MobileMenuProps) {
   const handleNavigate = (page: Page) => {
     onNavigate(page);
     onToggle(); // Close menu after navigation
@@ -19,36 +22,28 @@ export function MobileMenu({ isOpen, onToggle, currentPage, onNavigate }: Mobile
 
   return (
     <>
-      {/* Mobile Menu Button */}
-      <button
-        onClick={onToggle}
-        className="md:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2"
-        aria-label={isOpen ? 'Close mobile menu' : 'Open mobile menu'}
-        aria-expanded={isOpen}
-      >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-
       {/* Mobile Navigation */}
       {isOpen && (
         <nav className="md:hidden py-4 space-y-4 border-t border-gray-200">
           {NAV_ITEMS.map((item) => (
-            <NavigationItem
+            <button
               key={item.page}
-              page={item.page}
-              label={item.label}
-              currentPage={currentPage}
-              onNavigate={handleNavigate}
-              variant="mobile"
-            />
+              onClick={() => handleNavigate(item.page)}
+              className={`block w-full text-left px-4 py-2 transition-colors ${
+                currentPage === item.page
+                  ? "text-purple-600 bg-purple-50"
+                  : "text-gray-600 hover:text-purple-600 hover:bg-gray-50"
+              }`}
+            >
+              {item.label}
+            </button>
           ))}
           <div className="px-4 pt-2">
             <Button
-              onClick={() => handleNavigate(BOOKING_PAGE)}
+              onClick={() => handleNavigate("booking")}
               className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
-              aria-label={`Navigate to ${NAV_LABELS.BOOKING} page`}
             >
-              {NAV_LABELS.BOOKING}
+              Réserver un appel
             </Button>
           </div>
         </nav>

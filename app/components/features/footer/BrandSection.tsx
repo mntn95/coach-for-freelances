@@ -1,5 +1,5 @@
-import { Image } from '../../ui/image';
-import { brandInfo } from '@/data/brand';
+import { brandInfo } from "@/data/brand";
+import { Image } from "../../ui/image";
 
 export function BrandSection() {
   return (
@@ -15,9 +15,7 @@ export function BrandSection() {
         />
         <span className="text-white">{brandInfo.name}</span>
       </div>
-      <p className="text-sm text-gray-400">
-        {brandInfo.description}
-      </p>
+      <p className="text-sm text-gray-400">{brandInfo.description}</p>
     </div>
   );
 }

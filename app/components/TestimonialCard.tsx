@@ -1,7 +1,7 @@
-import { motion } from 'motion/react';
-import { Card, CardContent } from './ui/card';
-import { Avatar, AvatarFallback } from './ui/avatar';
-import { Star } from 'lucide-react';
+import { Star } from "lucide-react";
+import { motion } from "motion/react";
+import { Avatar, AvatarFallback } from "./ui/avatar";
+import { Card, CardContent } from "./ui/card";
 
 interface TestimonialCardProps {
   name: string;
@@ -18,9 +18,12 @@ export function TestimonialCard({
   company,
   content,
   rating,
-  delay = 0
+  delay = 0,
 }: TestimonialCardProps) {
-  const initials = name.split(' ').map(n => n[0]).join('');
+  const initials = name
+    .split(" ")
+    .map((n) => n[0])
+    .join("");
 
   return (
     <motion.div
@@ -37,7 +40,11 @@ export function TestimonialCard({
               <Star
                 key={i}
                 size={16}
-                className={i < rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}
+                className={
+                  i < rating
+                    ? "fill-yellow-400 text-yellow-400"
+                    : "text-gray-300"
+                }
               />
             ))}
           </div>

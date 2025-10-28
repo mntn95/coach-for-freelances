@@ -1,6 +1,6 @@
-import { AnimatedSection } from '../../ui/animated';
-import { Image } from '../../ui/image';
-import { aboutData } from '@/data/about';
+import { aboutData } from "@/data/about";
+import { AnimatedSection } from "../../ui/animated";
+import { Image } from "../../ui/image";
 
 export function StorySection() {
   return (
@@ -15,7 +15,7 @@ export function StorySection() {
                 alt="Laura Bianchi"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                style={{ objectFit: 'cover', height: '600px' }}
+                style={{ objectFit: "cover", height: "600px" }}
                 className="relative rounded-2xl shadow-xl"
                 context="below-fold"
               />

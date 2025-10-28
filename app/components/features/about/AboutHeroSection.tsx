@@ -1,5 +1,5 @@
-import { AnimatedSection } from '../../ui/animated';
-import { aboutData } from '@/data/about';
+import { aboutData } from "@/data/about";
+import { AnimatedSection } from "../../ui/animated";
 
 export function AboutHeroSection() {
   return (
@@ -9,9 +9,7 @@ export function AboutHeroSection() {
           <h1 className="text-white mb-6">{aboutData.hero.title}</h1>
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
-          <p className="text-xl text-purple-100">
-            {aboutData.hero.subtitle}
-          </p>
+          <p className="text-xl text-purple-100">{aboutData.hero.subtitle}</p>
         </AnimatedSection>
       </div>
     </section>

@@ -1,8 +1,8 @@
-import { CTAButton } from '../../CTAButton';
-import { ScrollReveal } from '../../ScrollReveal';
-import { Image } from '../../ui/image';
-import { homeData } from '@/data/home';
-import type { Page } from '@/types/navigation';
+import { homeData } from "@/data/home";
+import type { Page } from "@/types/navigation";
+import { CTAButton } from "../../CTAButton";
+import { ScrollReveal } from "../../ScrollReveal";
+import { Image } from "../../ui/image";
 
 interface HeroSectionProps {
   onNavigate: (page: Page) => void;
@@ -24,25 +24,30 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
                 <span className="text-sm">{homeData.hero.badge}</span>
               </div>
             </ScrollReveal>
-            
+
             <ScrollReveal delay={0.2}>
-              <h1 className="text-white mb-6">
-                {homeData.hero.title}
-              </h1>
+              <h1 className="text-white mb-6">{homeData.hero.title}</h1>
             </ScrollReveal>
-            
+
             <ScrollReveal delay={0.3}>
               <p className="text-xl text-purple-100 mb-8">
                 {homeData.hero.description}
               </p>
             </ScrollReveal>
-            
+
             <ScrollReveal delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <CTAButton onClick={() => handleNavigate('booking')} variant="secondary">
+                <CTAButton
+                  onClick={() => handleNavigate("booking")}
+                  variant="secondary"
+                >
                   {homeData.hero.primaryButton}
                 </CTAButton>
-                <CTAButton onClick={() => handleNavigate('about')} variant="outline" icon={false}>
+                <CTAButton
+                  onClick={() => handleNavigate("about")}
+                  variant="outline"
+                  icon={false}
+                >
                   {homeData.hero.secondaryButton}
                 </CTAButton>
               </div>
@@ -58,7 +63,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
                 fill
                 className="relative rounded-2xl shadow-2xl"
                 sizes="(max-width: 1024px) 0vw, 50vw"
-                style={{ objectFit: 'cover', height: '500px' }}
+                style={{ objectFit: "cover", height: "500px" }}
                 context="hero"
               />
             </div>

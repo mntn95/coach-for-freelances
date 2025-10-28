@@ -1,8 +1,8 @@
-import { ScrollReveal } from '../../ScrollReveal';
-import { ServiceCard } from '../../ServiceCard';
-import { featuredServices } from '@/data/services';
-import { homeData } from '@/data/home';
-import type { Page } from '@/types/navigation';
+import { homeData } from "@/data/home";
+import { featuredServices } from "@/data/services";
+import type { Page } from "@/types/navigation";
+import { ScrollReveal } from "../../ScrollReveal";
+import { ServiceCard } from "../../ServiceCard";
 
 interface ServicesSectionProps {
   onNavigate: (page: Page) => void;
@@ -34,7 +34,7 @@ export function ServicesSection({ onNavigate }: ServicesSectionProps) {
               description={service.description}
               price={service.price}
               features={service.features}
-              onBook={() => handleNavigate('booking')}
+              onBook={() => handleNavigate("booking")}
               delay={index * 0.1}
             />
           ))}
@@ -43,7 +43,7 @@ export function ServicesSection({ onNavigate }: ServicesSectionProps) {
         <ScrollReveal delay={0.4}>
           <div className="text-center mt-12">
             <button
-              onClick={() => handleNavigate('services')}
+              onClick={() => handleNavigate("services")}
               className="text-purple-600 hover:text-purple-700 underline"
             >
               {homeData.services.linkText}

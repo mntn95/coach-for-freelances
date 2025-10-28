@@ -1,9 +1,9 @@
-import { BrandSection } from '../features/footer/BrandSection';
-import { NavigationSection } from '../features/footer/NavigationSection';
-import { ContactSection } from '../features/footer/ContactSection';
-import { BottomBar } from '../features/footer/BottomBar';
-import type { Page } from '@/types/navigation';
-import { useNavigation } from '@/hooks/useNavigation';
+import { useNavigation } from "@/hooks/useNavigation";
+import type { Page } from "@/types/navigation";
+import { BottomBar } from "../features/footer/BottomBar";
+import { BrandSection } from "../features/footer/BrandSection";
+import { ContactSection } from "../features/footer/ContactSection";
+import { NavigationSection } from "../features/footer/NavigationSection";
 
 interface FooterProps {
   onNavigate: (page: Page) => void;

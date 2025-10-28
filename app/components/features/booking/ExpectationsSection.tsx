@@ -1,5 +1,5 @@
-import { AnimatedSection } from '../../ui/animated';
-import { bookingData } from '@/data/booking';
+import { bookingData } from "@/data/booking";
+import { AnimatedSection } from "../../ui/animated";
 
 export function ExpectationsSection() {
   return (
@@ -7,7 +7,9 @@ export function ExpectationsSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <div className="text-center mb-12">
-            <h2 className="text-gray-900 mb-4">{bookingData.expectations.title}</h2>
+            <h2 className="text-gray-900 mb-4">
+              {bookingData.expectations.title}
+            </h2>
             <p className="text-xl text-gray-600">
               {bookingData.expectations.subtitle}
             </p>

@@ -1,7 +1,7 @@
-import { ScrollReveal } from '../../ScrollReveal';
-import { CTAButton } from '../../CTAButton';
-import { homeData } from '@/data/home';
-import type { Page } from '@/types/navigation';
+import { homeData } from "@/data/home";
+import type { Page } from "@/types/navigation";
+import { CTAButton } from "../../CTAButton";
+import { ScrollReveal } from "../../ScrollReveal";
 
 interface CTASectionProps {
   onNavigate: (page: Page) => void;
@@ -24,7 +24,10 @@ export function CTASection({ onNavigate }: CTASectionProps) {
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
-          <CTAButton onClick={() => handleNavigate('booking')} variant="secondary">
+          <CTAButton
+            onClick={() => handleNavigate("booking")}
+            variant="secondary"
+          >
             {homeData.cta.buttonText}
           </CTAButton>
         </ScrollReveal>

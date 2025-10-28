@@ -1,12 +1,14 @@
-import { AnimatedSection } from '../../ui/animated';
-import { bookingData } from '@/data/booking';
+import { bookingData } from "@/data/booking";
+import { AnimatedSection } from "../../ui/animated";
 
 export function FAQSection() {
   return (
     <section className="py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="text-center text-gray-900 mb-12">{bookingData.faq.title}</h2>
+          <h2 className="text-center text-gray-900 mb-12">
+            {bookingData.faq.title}
+          </h2>
         </AnimatedSection>
 
         <div className="space-y-6">

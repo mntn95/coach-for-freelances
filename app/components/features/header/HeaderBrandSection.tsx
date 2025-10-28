@@ -1,6 +1,6 @@
-import { Image } from '../../ui/image';
-import { brandInfo } from '@/data/brand';
-import type { Page } from '@/types/navigation';
+import { brandInfo } from "@/data/brand";
+import type { Page } from "@/types/navigation";
+import { Image } from "../../ui/image";
 
 interface HeaderBrandSectionProps {
   onNavigate: (page: Page) => void;
@@ -8,7 +8,7 @@ interface HeaderBrandSectionProps {
 
 export function HeaderBrandSection({ onNavigate }: HeaderBrandSectionProps) {
   const handleClick = () => {
-    onNavigate('home');
+    onNavigate("home");
   };
 
   return (

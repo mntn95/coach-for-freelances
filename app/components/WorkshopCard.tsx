@@ -1,8 +1,14 @@
-import { motion } from 'motion/react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { Calendar, Clock, Users } from 'lucide-react';
+import { Calendar, Clock, Users } from "lucide-react";
+import { motion } from "motion/react";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 interface WorkshopCardProps {
   title: string;
@@ -25,12 +31,12 @@ export function WorkshopCard({
   level,
   price,
   onBook,
-  delay = 0
+  delay = 0,
 }: WorkshopCardProps) {
   const levelColors = {
-    Débutant: 'bg-green-100 text-green-700',
-    Intermédiaire: 'bg-yellow-100 text-yellow-700',
-    Avancé: 'bg-red-100 text-red-700'
+    Débutant: "bg-green-100 text-green-700",
+    Intermédiaire: "bg-yellow-100 text-yellow-700",
+    Avancé: "bg-red-100 text-red-700",
   };
 
   return (
@@ -44,7 +50,12 @@ export function WorkshopCard({
       <Card className="h-full hover:shadow-xl transition-shadow">
         <CardHeader>
           <div className="flex justify-between items-start mb-2">
-            <Badge className={levelColors[level as keyof typeof levelColors] || 'bg-gray-100 text-gray-700'}>
+            <Badge
+              className={
+                levelColors[level as keyof typeof levelColors] ||
+                "bg-gray-100 text-gray-700"
+              }
+            >
               {level}
             </Badge>
             <span className="text-purple-600">{price}</span>
@@ -67,7 +78,7 @@ export function WorkshopCard({
               <span>{participants}</span>
             </div>
           </div>
-          <Button 
+          <Button
             onClick={onBook}
             variant="outline"
             className="w-full border-purple-600 text-purple-600 hover:bg-purple-50"

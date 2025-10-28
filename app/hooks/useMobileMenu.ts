@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import type { Page } from '@/types/navigation';
+import { useState } from "react";
 
 interface UseMobileMenuReturn {
   isOpen: boolean;
@@ -13,12 +12,12 @@ export function useMobileMenu(): UseMobileMenuReturn {
 
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
-  const toggle = () => setIsOpen(prev => !prev);
+  const toggle = () => setIsOpen((prev) => !prev);
 
   return {
     isOpen,
     open,
     close,
-    toggle
+    toggle,
   };
 }
