@@ -33,6 +33,7 @@ export function About() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   style={{ objectFit: 'cover', height: '600px' }}
                   className="relative rounded-2xl shadow-xl"
+                  context="below-fold"
                 />
               </div>
             </ScrollReveal>

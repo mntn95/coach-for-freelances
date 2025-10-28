@@ -1,17 +1,31 @@
 import { ScrollReveal } from '../ScrollReveal';
 import { Calendar, Clock, Video, CheckCircle2 } from 'lucide-react';
 import { useEffect } from 'react';
+import { isClient, safeDocument } from '@/utils/ssr';
 
 export function Booking() {
   useEffect(() => {
+    // Skip if not on client side
+    if (!isClient) return;
+    
+    const doc = safeDocument();
+    if (!doc) return;
+
+    // Check if Calendly script already exists
+    const existingScript = doc.querySelector('script[src*="calendly"]');
+    if (existingScript) return;
+
     // Load Calendly widget script
-    const script = document.createElement('script');
+    const script = doc.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
-    document.body.appendChild(script);
+    doc.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      const scriptToRemove = doc.querySelector('script[src*="calendly"]');
+      if (scriptToRemove && doc.body.contains(scriptToRemove)) {
+        doc.body.removeChild(scriptToRemove);
+      }
     };
   }, []);
 

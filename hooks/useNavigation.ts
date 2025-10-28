@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import type { Page } from '@/types/navigation';
+import { safeScrollToTop } from '@/utils/ssr';
 
 /**
  * Custom hook for navigation functionality
@@ -16,9 +17,7 @@ export const useNavigation = () => {
    */
   const navigate = useCallback((page: Page) => {
     // Safe scroll to top with SSR check
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    safeScrollToTop();
   }, []);
 
   return { navigate };

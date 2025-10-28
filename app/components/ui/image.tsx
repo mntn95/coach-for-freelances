@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import NextImage from 'next/image'
+import { getImageProps } from '@/config/images'
 
 const ERROR_IMG_SRC =
   'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg=='
@@ -18,6 +19,7 @@ interface ImageProps {
   quality?: number
   style?: React.CSSProperties
   onError?: () => void
+  context?: 'hero' | 'logo' | 'card' | 'below-fold'
 }
 
 export function Image({
@@ -32,8 +34,12 @@ export function Image({
   quality,
   style,
   onError,
+  context = 'below-fold',
 }: ImageProps) {
   const [didError, setDidError] = useState(false)
+  
+  // Get optimized props based on context
+  const optimizedProps = getImageProps(context)
 
   const handleError = () => {
     setDidError(true)
@@ -59,54 +65,58 @@ export function Image({
     )
   }
 
-  // If width/height are provided, use them
-  if (width && height) {
-    return (
-      <NextImage
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className={className}
-        quality={quality}
-        priority={priority}
-        onError={handleError}
-        style={style}
-      />
-    )
+  // Build common props
+  const commonProps = {
+    src,
+    alt,
+    quality: quality || optimizedProps.quality,
+    priority: priority || optimizedProps.priority,
+    loading: optimizedProps.loading,
+    placeholder: optimizedProps.placeholder,
+    blurDataURL: optimizedProps.blurDataURL,
+    onError: handleError,
   }
 
-  // If fill is true, use fill
+  // Build conditional props based on usage pattern
+  const conditionalProps = (() => {
+    if (width && height) {
+      // Fixed dimensions
+      return {
+        width,
+        height,
+        className,
+        style,
+      }
+    }
+    
+    if (fill) {
+      // Fill container
+      return {
+        fill: true,
+        sizes,
+        className: "object-cover",
+      }
+    }
+    
+    // Default fallback
+    return {
+      width: 800,
+      height: 600,
+      className,
+      style,
+    }
+  })()
+
+  // Render with fill wrapper if needed
   if (fill) {
     return (
       <div className={`relative ${className}`} style={style}>
-        <NextImage
-          src={src}
-          alt={alt}
-          fill
-          sizes={sizes}
-          className="object-cover"
-          quality={quality}
-          priority={priority}
-          onError={handleError}
-        />
+        <NextImage {...commonProps} {...conditionalProps} />
       </div>
     )
   }
 
-  // Default: render with inline image if no dimensions specified
-  return (
-    <NextImage
-      src={src}
-      alt={alt}
-      className={className}
-      quality={quality}
-      priority={priority}
-      onError={handleError}
-      style={style}
-      width={800}
-      height={600}
-    />
-  )
+  // Single NextImage component for all cases
+  return <NextImage {...commonProps} {...conditionalProps} />
 }
 

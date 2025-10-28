@@ -162,6 +162,7 @@ export function Testimonials() {
                     alt="Témoignage vidéo"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    context="card"
                   />
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">

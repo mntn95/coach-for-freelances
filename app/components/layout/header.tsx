@@ -36,6 +36,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               width={40}
               height={40}
               className="object-contain"
+              context="logo"
             />
             <span className="text-gray-900">Laura Bianchi</span>
           </button>

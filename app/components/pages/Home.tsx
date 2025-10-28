@@ -69,6 +69,7 @@ export function Home({ onNavigate }: HomeProps) {
                   className="relative rounded-2xl shadow-2xl"
                   sizes="(max-width: 1024px) 0vw, 50vw"
                   style={{ objectFit: 'cover', height: '500px' }}
+                  context="hero"
                 />
               </div>
             </ScrollReveal>

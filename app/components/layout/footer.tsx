@@ -29,6 +29,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 width={40}
                 height={40}
                 className="object-contain"
+                context="logo"
               />
               <span className="text-white">Laura Bianchi</span>
             </div>
