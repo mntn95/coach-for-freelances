@@ -5,79 +5,21 @@ import { TestimonialCard } from '../TestimonialCard';
 import { Image } from '../ui/image';
 import { Target, TrendingUp, Users, Zap } from 'lucide-react';
 import type { Page } from '@/types/navigation';
+import { useNavigation } from '@/hooks/useNavigation';
+import { featuredServices } from '@/data/services';
+import { testimonials } from '@/data/testimonials';
 
 interface HomeProps {
   onNavigate: (page: Page) => void;
 }
 
 export function Home({ onNavigate }: HomeProps) {
+  const { navigate } = useNavigation();
+
   const handleBooking = () => {
     onNavigate('booking');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate('booking');
   };
-
-  const featuredServices = [
-    {
-      icon: Target,
-      title: 'Séance Découverte',
-      description: 'Un premier rendez-vous de 45 minutes pour analyser votre situation et débloquer vos premiers leviers.',
-      price: 'Gratuit',
-      features: [
-        'Analyse de votre situation actuelle',
-        'Identification des blocages',
-        'Plan d\'action personnalisé',
-        'Aucun engagement'
-      ]
-    },
-    {
-      icon: TrendingUp,
-      title: 'Accompagnement 3 mois',
-      description: 'Programme intensif pour passer de 5k€ à 10k€/mois et structurer votre activité freelance.',
-      price: 'À partir de 1 500€',
-      features: [
-        '6 séances de coaching individuelles',
-        'Support WhatsApp illimité',
-        'Outils et templates inclus',
-        'Suivi de progression hebdomadaire'
-      ]
-    },
-    {
-      icon: Zap,
-      title: 'Session Stratégique',
-      description: 'Une séance de 2h pour résoudre un problème précis : positionnement, pricing, prospection...',
-      price: '297€',
-      features: [
-        '2h de coaching intensif',
-        'Plan d\'action concret',
-        'Replay de la session',
-        'Suivi email pendant 7 jours'
-      ]
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Thomas Dubois',
-      role: 'Développeur Full-Stack',
-      company: 'Freelance',
-      content: 'En 3 mois avec Laura, je suis passé de 4k€ à 8k€/mois. Elle m\'a aidé à sortir de ma zone de confort et à enfin valoriser mes compétences.',
-      rating: 5
-    },
-    {
-      name: 'Sophie Martin',
-      role: 'DevOps Engineer',
-      company: 'Indépendante',
-      content: 'Laura ne vend pas du rêve, elle donne des outils concrets. Grâce à elle, j\'ai doublé mon TJM et je travaille avec des clients qui me respectent.',
-      rating: 5
-    },
-    {
-      name: 'Alexandre Rousseau',
-      role: 'Consultant Cloud',
-      company: 'Freelance',
-      content: 'J\'étais bloqué à 5k€/mois depuis 2 ans. Laura m\'a fait réaliser que le problème n\'était pas technique mais mental. Aujourd\'hui je facture 12k€/mois.',
-      rating: 5
-    }
-  ];
 
   return (
     <div>

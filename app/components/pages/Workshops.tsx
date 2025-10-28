@@ -1,73 +1,20 @@
 import { ScrollReveal } from '../ScrollReveal';
 import { WorkshopCard } from '../WorkshopCard';
 import type { Page } from '@/types/navigation';
+import { useNavigation } from '@/hooks/useNavigation';
+import { workshops, workshopTestimonials } from '@/data/workshops';
 
 interface WorkshopsProps {
   onNavigate: (page: Page) => void;
 }
 
 export function Workshops({ onNavigate }: WorkshopsProps) {
+  const { navigate } = useNavigation();
+
   const handleBooking = () => {
     onNavigate('booking');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate('booking');
   };
-
-  const workshops = [
-    {
-      title: 'Pricing Strategy : Doublez votre TJM en 90 jours',
-      description: 'Apprenez à fixer vos tarifs en fonction de votre valeur réelle, pas de votre ancienneté ou de vos doutes.',
-      date: 'Jeudi 15 février 2025',
-      duration: '3 heures (9h-12h)',
-      participants: 'Max 15 participants',
-      level: 'Débutant',
-      price: '197€'
-    },
-    {
-      title: 'Personal Branding sur LinkedIn pour Devs',
-      description: 'Construisez votre marque personnelle et attirez des clients premium sans être un influenceur.',
-      date: 'Mardi 27 février 2025',
-      duration: '2h30 (14h-16h30)',
-      participants: 'Max 12 participants',
-      level: 'Intermédiaire',
-      price: '147€'
-    },
-    {
-      title: 'Prospection Efficace : Trouvez 3 clients en 30 jours',
-      description: 'Méthode éprouvée pour prospecter sans être commercial, même si vous détestez vendre.',
-      date: 'Jeudi 6 mars 2025',
-      duration: '3 heures (9h-12h)',
-      participants: 'Max 15 participants',
-      level: 'Débutant',
-      price: '197€'
-    },
-    {
-      title: 'Négociation : Gérez les objections et closing',
-      description: 'Techniques de négociation adaptées aux profils techniques pour closer vos deals sans stress.',
-      date: 'Mardi 18 mars 2025',
-      duration: '2 heures (10h-12h)',
-      participants: 'Max 10 participants',
-      level: 'Intermédiaire',
-      price: '147€'
-    },
-    {
-      title: 'Transition Salariat → Freelance : Le Guide Complet',
-      description: 'Toutes les étapes pour quitter votre CDI et lancer votre activité freelance sereinement.',
-      date: 'Jeudi 27 mars 2025',
-      duration: '4 heures (9h-13h)',
-      participants: 'Max 20 participants',
-      level: 'Débutant',
-      price: '247€'
-    },
-    {
-      title: 'Productivité & Time Management pour Freelances',
-      description: 'Travaillez moins, gagnez plus : méthodes pour doubler votre productivité sans burnout.',
-      date: 'Mardi 8 avril 2025',
-      duration: '2h30 (14h-16h30)',
-      participants: 'Max 15 participants',
-      level: 'Intermédiaire',
-      price: '147€'
-    }
-  ];
 
   return (
     <div>

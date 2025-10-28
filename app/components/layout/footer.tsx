@@ -2,15 +2,18 @@ import { Linkedin, Mail, Phone } from 'lucide-react';
 import { Image } from '../ui/image';
 import type { Page } from '@/types/navigation';
 import { NAV_LABELS } from '@/constants/navigation';
+import { useNavigation } from '@/hooks/useNavigation';
 
 interface FooterProps {
   onNavigate: (page: Page) => void;
 }
 
 export function Footer({ onNavigate }: FooterProps) {
+  const { navigate } = useNavigation();
+
   const handleNavigate = (page: Page) => {
     onNavigate(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate(page);
   };
 
   return (

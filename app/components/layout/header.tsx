@@ -4,6 +4,7 @@ import { Button } from '../ui/button';
 import { Image } from '../ui/image';
 import type { Page } from '@/types/navigation';
 import { NAV_ITEMS, BOOKING_PAGE, NAV_LABELS } from '@/constants/navigation';
+import { useNavigation } from '@/hooks/useNavigation';
 
 interface HeaderProps {
   currentPage: Page;
@@ -12,11 +13,12 @@ interface HeaderProps {
 
 export function Header({ currentPage, onNavigate }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { navigate } = useNavigation();
 
   const handleNavigate = (page: Page) => {
     onNavigate(page);
     setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate(page);
   };
 
   return (
