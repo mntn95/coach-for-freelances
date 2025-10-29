@@ -3,7 +3,7 @@ import { testimonials } from "@/data/testimonials";
 import { useNavigation } from "@/hooks/useNavigation";
 import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
-import { ScrollReveal } from "../../ScrollReveal";
+import { ScrollReveal } from "../../ui/ScrollReveal";
 import { TestimonialCard } from "../cards/TestimonialCard";
 
 export function TestimonialsSection({ onNavigate }: WithNavigation) {

@@ -3,7 +3,7 @@ import { featuredServices } from "@/data/services";
 import { useNavigation } from "@/hooks/useNavigation";
 import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
-import { ScrollReveal } from "../../ScrollReveal";
+import { ScrollReveal } from "../../ui/ScrollReveal";
 import { ServiceCard } from "../cards/ServiceCard";
 
 export function ServicesSection({ onNavigate }: WithNavigation) {

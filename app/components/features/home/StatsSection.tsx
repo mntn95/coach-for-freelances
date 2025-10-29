@@ -1,5 +1,5 @@
 import { homeData } from "@/data/home";
-import { ScrollReveal } from "../../ScrollReveal";
+import { ScrollReveal } from "../../ui/ScrollReveal";
 
 export function StatsSection() {
   return (

@@ -1,4 +1,4 @@
-import { ScrollReveal } from "../ScrollReveal";
+import { ScrollReveal } from "./ScrollReveal";
 import { AnimatedSectionProps } from "@/types";
 
 export function AnimatedSection({

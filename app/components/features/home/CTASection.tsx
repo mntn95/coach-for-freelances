@@ -2,8 +2,8 @@ import { homeData } from "@/data/home";
 import { useNavigation } from "@/hooks/useNavigation";
 import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
-import { CTAButton } from "../../CTAButton";
-import { ScrollReveal } from "../../ScrollReveal";
+import { CTAButton } from "../../ui/CTAButton";
+import { ScrollReveal } from "../../ui/ScrollReveal";
 
 export function CTASection({ onNavigate }: WithNavigation) {
   const { navigate } = useNavigation();

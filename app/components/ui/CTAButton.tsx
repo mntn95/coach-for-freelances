@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "./button";
 import { CTAButtonProps } from "@/types";
 
 export function CTAButton({
