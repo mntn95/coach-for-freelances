@@ -3,8 +3,9 @@
  * Contains service offerings with pricing and features
  */
 
-import { ServicesPageData, Service } from "@/types/data/services";
+import { FAQItem, ServiceBase, StepItem, CTAData } from "@/types/common/shared";
 import {
+  LucideIcon,
   Target,
   TrendingUp,
   Zap,
@@ -12,6 +13,34 @@ import {
   Calendar,
   MessageCircle,
 } from "lucide-react";
+
+export interface Service extends ServiceBase {
+  icon: LucideIcon; // Lucide icon for services page
+  // Inherits title, description, price, features from ServiceBase
+}
+
+export type ProcessStep = StepItem;
+
+export interface ServicesPageData {
+  hero: {
+    title: string;
+    subtitle: string;
+  };
+  services: {
+    title: string;
+    subtitle: string;
+  };
+  process: {
+    title: string;
+    subtitle: string;
+    steps: ProcessStep[];
+  };
+  faq: {
+    title: string;
+    items: FAQItem[];
+  };
+  cta: CTAData;
+}
 
 export const servicesPageData: ServicesPageData = {
   hero: {

@@ -3,8 +3,43 @@
  * Contains hero, info, expectations, calendly, and FAQ content
  */
 
-import { BookingData } from "@/types/data/booking";
-import { Calendar, Clock, Video, CheckCircle2 } from "lucide-react";
+import { FAQItem, IconItem, StepItem } from "@/types/common/shared";
+import { LucideIcon, Calendar, Clock, Video, CheckCircle2 } from "lucide-react";
+
+export interface InfoItem extends IconItem {
+  icon: LucideIcon; // Lucide icon for booking page
+}
+
+export type ExpectationItem = StepItem;
+
+export interface BookingData {
+  hero: {
+    title: string;
+    subtitle: string;
+  };
+  info: {
+    items: InfoItem[];
+  };
+  expectations: {
+    title: string;
+    subtitle: string;
+    items: ExpectationItem[];
+  };
+  calendly: {
+    title: string;
+    subtitle: string;
+    url: string;
+    placeholder: {
+      title: string;
+      description: string;
+      code: string;
+    };
+  };
+  faq: {
+    title: string;
+    items: FAQItem[];
+  };
+}
 
 export const bookingData: BookingData = {
   hero: {

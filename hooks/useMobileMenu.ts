@@ -7,6 +7,12 @@ interface UseMobileMenuReturn {
   toggle: () => void;
 }
 
+/**
+ * Custom hook for managing mobile menu state
+ * Provides state and handlers for opening, closing, and toggling mobile menu
+ *
+ * @returns Object containing menu state and control functions
+ */
 export function useMobileMenu(): UseMobileMenuReturn {
   const [isOpen, setIsOpen] = useState(false);
 

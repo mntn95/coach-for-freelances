@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 import { motion } from "motion/react";
-import { Avatar, AvatarFallback } from "./ui/avatar";
-import { Card, CardContent } from "./ui/card";
+import { Avatar, AvatarFallback } from "../../ui/avatar";
+import { Card, CardContent } from "../../ui/card";
 import { TestimonialCardProps } from "@/types";
 
 export function TestimonialCard({

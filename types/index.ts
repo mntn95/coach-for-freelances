@@ -6,16 +6,16 @@
 // Navigation types
 export type { Page } from "./navigation";
 
-// Data types
+// Data types - Re-exported from /data directory
 export type {
   HomeData,
   HeroData,
   ProblemItem,
   ServiceItem,
   TestimonialItem,
-} from "./data/home";
+} from "@/data/home";
 
-export type { ServicesPageData, Service, ProcessStep } from "./data/services";
+export type { ServicesPageData, Service, ProcessStep } from "@/data/services";
 
 export type {
   WorkshopsPageData,
@@ -23,23 +23,23 @@ export type {
   BenefitItem,
   IncludedItem,
   WorkshopTestimonial,
-} from "./data/workshops";
+} from "@/data/workshops";
 
-export type { AboutData, ValueItem, CertificationItem } from "./data/about";
+export type { AboutData, ValueItem, CertificationItem } from "@/data/about";
 
-export type { BookingData, InfoItem, ExpectationItem } from "./data/booking";
+export type { BookingData, InfoItem, ExpectationItem } from "@/data/booking";
 
-export type { LegalData, LegalSection, PrivacySection } from "./data/legal";
+export type { LegalData, LegalSection, PrivacySection } from "@/data/legal";
 
 export type {
   TestimonialsPageData,
   Testimonial,
   SuccessStory,
   VideoTestimonial,
-} from "./data/testimonials";
+} from "@/data/testimonials";
 
-export type { ContactInfo } from "./data/contact";
-export type { BrandInfo } from "./data/brand";
+export type { ContactInfo } from "@/data/contact";
+export type { BrandInfo } from "@/data/brand";
 
 // Component types - Note: Most component props use WithNavigation or WithNavigationAndPage directly
 export type { MobileMenuProps } from "./components/features";

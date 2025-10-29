@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
-import { Button } from "./ui/button";
+import { Button } from "../../ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "../../ui/card";
 import { ServiceCardProps } from "@/types/components/features/cards";
 
 export function ServiceCard({

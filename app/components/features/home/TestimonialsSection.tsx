@@ -4,7 +4,7 @@ import { useNavigation } from "@/hooks/useNavigation";
 import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
 import { ScrollReveal } from "../../ScrollReveal";
-import { TestimonialCard } from "../../TestimonialCard";
+import { TestimonialCard } from "../cards/TestimonialCard";
 
 export function TestimonialsSection({ onNavigate }: WithNavigation) {
   const { navigate } = useNavigation();

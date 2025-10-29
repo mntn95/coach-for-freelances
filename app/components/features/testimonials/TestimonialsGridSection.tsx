@@ -2,7 +2,7 @@ import {
   extendedTestimonials,
   testimonialsPageData,
 } from "@/data/testimonials";
-import { TestimonialCard } from "../../TestimonialCard";
+import { TestimonialCard } from "../cards/TestimonialCard";
 import { AnimatedSection } from "../../ui/animated";
 import { Section } from "../../ui/section";
 

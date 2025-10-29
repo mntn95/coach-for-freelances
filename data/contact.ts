@@ -3,7 +3,11 @@
  * Contains contact details and social media links
  */
 
-import { ContactInfo } from "@/types/data/contact";
+export interface ContactInfo {
+  email: string;
+  phone: string;
+  linkedin: string;
+}
 
 export const contactInfo: ContactInfo = {
   email: "contact@laurabianchi.fr",

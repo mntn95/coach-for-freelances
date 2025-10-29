@@ -3,7 +3,7 @@ import { useNavigation } from "@/hooks/useNavigation";
 import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
 import { AnimatedSection } from "../../ui/animated";
-import { WorkshopCard } from "../../WorkshopCard";
+import { WorkshopCard } from "../cards/WorkshopCard";
 
 export function WorkshopsGridSection({ onNavigate }: WithNavigation) {
   const { navigate } = useNavigation();

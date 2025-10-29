@@ -3,7 +3,11 @@
  * Contains brand details and logo information
  */
 
-import { BrandInfo } from "@/types/data/brand";
+export interface BrandInfo {
+  name: string;
+  description: string;
+  logo: string;
+}
 
 export const brandInfo: BrandInfo = {
   name: "Laura Bianchi",

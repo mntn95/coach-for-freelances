@@ -4,7 +4,7 @@ import { useNavigation } from "@/hooks/useNavigation";
 import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
 import { ScrollReveal } from "../../ScrollReveal";
-import { ServiceCard } from "../../ServiceCard";
+import { ServiceCard } from "../cards/ServiceCard";
 
 export function ServicesSection({ onNavigate }: WithNavigation) {
   const { navigate } = useNavigation();

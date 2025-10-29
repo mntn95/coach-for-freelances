@@ -1,7 +1,7 @@
 import { useNavigation } from "@/hooks/useNavigation";
 import type { Page, WithNavigationAndPage } from "@/types";
 import { Menu, X } from "lucide-react";
-import { useMobileMenu } from "../../hooks/useMobileMenu";
+import { useMobileMenu } from "@/hooks/useMobileMenu";
 import { DesktopNavigation } from "../features/header/DesktopNavigation";
 import { HeaderBrandSection } from "../features/header/HeaderBrandSection";
 import { MobileMenu } from "../features/header/MobileMenu";
