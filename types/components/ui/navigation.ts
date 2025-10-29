@@ -4,16 +4,15 @@
  */
 
 import { Page } from "../../navigation";
-import { WithNavigationAndPage } from "../../common/shared";
 
 export interface NavigationButtonProps {
   page: Page;
   label: string;
-  onClick: (page: Page) => void;
 }
 
-export interface NavigationItemProps extends WithNavigationAndPage {
+export interface NavigationItemProps {
   page: Page;
   label: string;
+  currentPage: Page | null;
   variant?: "desktop" | "mobile";
 }

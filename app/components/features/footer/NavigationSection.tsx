@@ -1,9 +1,8 @@
 import { NAV_LABELS } from "@/constants/navigation";
-import type { Page } from "@/types/navigation";
-import type { WithNavigation } from "@/types";
+import type { Page } from "@/types";
 import { NavigationButton } from "../../ui/navButton";
 
-export function NavigationSection({ onNavigate }: WithNavigation) {
+export function NavigationSection() {
   const navigationItems: Array<{ page: Page; label: string }> = [
     { page: "about", label: NAV_LABELS.ABOUT },
     { page: "services", label: NAV_LABELS.SERVICES },
@@ -18,11 +17,7 @@ export function NavigationSection({ onNavigate }: WithNavigation) {
       <ul className="space-y-2">
         {navigationItems.map((item) => (
           <li key={item.page}>
-            <NavigationButton
-              page={item.page}
-              label={item.label}
-              onClick={onNavigate}
-            />
+            <NavigationButton page={item.page} label={item.label} />
           </li>
         ))}
       </ul>

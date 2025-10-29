@@ -1,3 +1,5 @@
+"use client";
+
 import { TestimonialsHeroSection } from "../features/testimonials/TestimonialsHeroSection";
 import { StatsSection } from "../features/testimonials/StatsSection";
 import { TestimonialsGridSection } from "../features/testimonials/TestimonialsGridSection";

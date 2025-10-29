@@ -1,18 +1,10 @@
+import Link from "next/link";
 import { homeData } from "@/data/home";
 import { testimonials } from "@/data/testimonials";
-import { useNavigation } from "@/hooks/useNavigation";
-import type { WithNavigation } from "@/types";
-import type { Page } from "@/types/navigation";
 import { ScrollReveal } from "../../ui/ScrollReveal";
 import { TestimonialCard } from "../cards/TestimonialCard";
 
-export function TestimonialsSection({ onNavigate }: WithNavigation) {
-  const { navigate } = useNavigation();
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    navigate();
-  };
-
+export function TestimonialsSection() {
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,12 +27,12 @@ export function TestimonialsSection({ onNavigate }: WithNavigation) {
 
         <ScrollReveal delay={0.4}>
           <div className="text-center mt-12">
-            <button
-              onClick={() => handleNavigate("testimonials")}
+            <Link
+              href="/testimonials"
               className="text-purple-600 hover:text-purple-700 underline"
             >
               {homeData.testimonials.linkText}
-            </button>
+            </Link>
           </div>
         </ScrollReveal>
       </div>

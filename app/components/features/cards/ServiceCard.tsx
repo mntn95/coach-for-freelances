@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Button } from "../../ui/button";
 import {
@@ -15,7 +18,6 @@ export function ServiceCard({
   description,
   price,
   features,
-  onBook,
   delay = 0,
 }: ServiceCardProps) {
   return (
@@ -58,12 +60,13 @@ export function ServiceCard({
               </li>
             ))}
           </ul>
-          <Button
-            onClick={onBook}
-            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
-          >
-            Réserver
-          </Button>
+          <Link href="/booking" className="block">
+            <Button
+              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+            >
+              Réserver
+            </Button>
+          </Link>
         </CardContent>
       </Card>
     </motion.div>

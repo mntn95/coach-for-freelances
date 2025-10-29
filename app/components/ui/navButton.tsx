@@ -1,21 +1,22 @@
-import type { NavigationButtonProps } from "@/types";
+"use client";
 
-export function NavigationButton({
-  page,
-  label,
-  onClick,
-}: NavigationButtonProps) {
-  const handleClick = () => {
-    onClick(page);
-  };
+import Link from "next/link";
+import { getPagePath } from "@/lib/navigation";
+import type { Page } from "@/types";
 
+interface NavigationButtonProps {
+  page: Page;
+  label: string;
+}
+
+export function NavigationButton({ page, label }: NavigationButtonProps) {
   return (
-    <button
-      onClick={handleClick}
+    <Link
+      href={getPagePath(page)}
       className="text-sm hover:text-purple-400 transition-colors"
       aria-label={`Navigate to ${label}`}
     >
       {label}
-    </button>
+    </Link>
   );
 }

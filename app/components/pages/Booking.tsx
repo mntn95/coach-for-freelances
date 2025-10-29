@@ -1,3 +1,5 @@
+"use client";
+
 import { BookingHeroSection } from "../features/booking/BookingHeroSection";
 import { CalendlySection } from "../features/booking/CalendlySection";
 import { ExpectationsSection } from "../features/booking/ExpectationsSection";

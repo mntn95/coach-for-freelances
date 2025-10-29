@@ -1,29 +1,40 @@
-import { useNavigation } from "@/hooks/useNavigation";
-import type { Page, WithNavigationAndPage } from "@/types";
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useMobileMenu } from "@/hooks/useMobileMenu";
+import type { Page } from "@/types";
 import { DesktopNavigation } from "../features/header/DesktopNavigation";
 import { HeaderBrandSection } from "../features/header/HeaderBrandSection";
 import { MobileMenu } from "../features/header/MobileMenu";
 
-export function Header({ currentPage, onNavigate }: WithNavigationAndPage) {
-  const { navigate } = useNavigation();
+export function Header() {
+  const pathname = usePathname();
   const { isOpen, toggle } = useMobileMenu();
 
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    navigate();
+  // Déterminer la page active depuis le pathname
+  const getCurrentPage = (): Page | null => {
+    if (pathname === "/") return "home";
+    const page = pathname.slice(1);
+    const validPages: Page[] = [
+      "about",
+      "services",
+      "workshops",
+      "testimonials",
+      "booking",
+      "legal",
+    ];
+    return validPages.includes(page as Page) ? (page as Page) : null;
   };
+
+  const currentPage = getCurrentPage();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <HeaderBrandSection onNavigate={handleNavigate} />
-          <DesktopNavigation
-            currentPage={currentPage}
-            onNavigate={handleNavigate}
-          />
+          <HeaderBrandSection />
+          <DesktopNavigation currentPage={currentPage} />
           {/* Mobile Menu Button */}
           <button
             onClick={toggle}
@@ -38,7 +49,6 @@ export function Header({ currentPage, onNavigate }: WithNavigationAndPage) {
           isOpen={isOpen}
           onToggle={toggle}
           currentPage={currentPage}
-          onNavigate={handleNavigate}
         />
       </div>
     </header>

@@ -1,17 +1,12 @@
+"use client";
+
+import Link from "next/link";
 import { allServices, servicesPageData } from "@/data/services";
-import { useNavigation } from "@/hooks/useNavigation";
-import type { WithNavigation } from "@/types";
-import type { Page } from "@/types/navigation";
 import { ServiceCard } from "../cards/ServiceCard";
 import { AnimatedSection } from "../../ui/animated";
 import { Section } from "../../ui/section";
 
-export function ServicesGridSection({ onNavigate }: WithNavigation) {
-  const { navigate } = useNavigation();
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    navigate();
-  };
+export function ServicesGridSection() {
 
   return (
     <Section containerSize="lg">
@@ -31,7 +26,6 @@ export function ServicesGridSection({ onNavigate }: WithNavigation) {
           <ServiceCard
             key={`service-${service.title}-${index}`}
             {...service}
-            onBook={() => handleNavigate("booking")}
             delay={index * 0.1}
           />
         ))}

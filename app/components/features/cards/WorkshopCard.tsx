@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { Calendar, Clock, Users } from "lucide-react";
 import { motion } from "motion/react";
 import { Badge } from "../../ui/badge";
@@ -19,7 +22,6 @@ export function WorkshopCard({
   participants,
   level,
   price,
-  onBook,
   delay = 0,
 }: WorkshopCardProps) {
   const levelColors = {
@@ -67,13 +69,14 @@ export function WorkshopCard({
               <span>{participants}</span>
             </div>
           </div>
-          <Button
-            onClick={onBook}
-            variant="outline"
-            className="w-full border-purple-600 text-purple-600 hover:bg-purple-50"
-          >
-            S&apos;inscrire
-          </Button>
+          <Link href="/booking" className="block">
+            <Button
+              variant="outline"
+              className="w-full border-purple-600 text-purple-600 hover:bg-purple-50"
+            >
+              S&apos;inscrire
+            </Button>
+          </Link>
         </CardContent>
       </Card>
     </motion.div>

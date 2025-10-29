@@ -1,16 +1,11 @@
+"use client";
+
+import Link from "next/link";
 import { servicesPageData } from "@/data/services";
-import { useNavigation } from "@/hooks/useNavigation";
-import type { WithNavigation } from "@/types";
-import type { Page } from "@/types/navigation";
 import { AnimatedSection } from "../../ui/animated";
 import { Section } from "../../ui/section";
 
-export function CTASection({ onNavigate }: WithNavigation) {
-  const { navigate } = useNavigation();
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    navigate();
-  };
+export function CTASection() {
 
   return (
     <Section background="gradient" containerSize="lg">
@@ -23,12 +18,12 @@ export function CTASection({ onNavigate }: WithNavigation) {
         </p>
       </AnimatedSection>
       <AnimatedSection delay={0.2}>
-        <button
-          onClick={() => handleNavigate("booking")}
+        <Link
+          href="/booking"
           className="inline-flex items-center px-8 py-4 bg-white text-purple-600 rounded-lg hover:bg-gray-50 transition-colors"
         >
           {servicesPageData.cta.buttonText}
-        </button>
+        </Link>
       </AnimatedSection>
     </Section>
   );

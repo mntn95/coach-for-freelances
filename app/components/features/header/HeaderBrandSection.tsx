@@ -1,15 +1,13 @@
+"use client";
+
+import Link from "next/link";
 import { brandInfo } from "@/data/brand";
-import type { WithNavigation } from "@/types";
 import { Image } from "../../ui/image";
 
-export function HeaderBrandSection({ onNavigate }: WithNavigation) {
-  const handleClick = () => {
-    onNavigate("home");
-  };
-
+export function HeaderBrandSection() {
   return (
-    <button
-      onClick={handleClick}
+    <Link
+      href="/"
       className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
       aria-label={`Navigate to ${brandInfo.name} homepage`}
     >
@@ -22,6 +20,6 @@ export function HeaderBrandSection({ onNavigate }: WithNavigation) {
         context="logo"
       />
       <span className="text-gray-900">{brandInfo.name}</span>
-    </button>
+    </Link>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { AboutHeroSection } from "../features/about/AboutHeroSection";
 import { StorySection } from "../features/about/StorySection";
 import { ValuesSection } from "../features/about/ValuesSection";

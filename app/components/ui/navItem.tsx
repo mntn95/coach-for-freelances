@@ -1,16 +1,22 @@
-import { NavigationItemProps } from "@/types";
+"use client";
+
+import Link from "next/link";
+import { getPagePath } from "@/lib/navigation";
+import type { Page } from "@/types";
+
+interface NavigationItemProps {
+  page: Page;
+  label: string;
+  currentPage: Page | null;
+  variant?: "desktop" | "mobile";
+}
 
 export function NavigationItem({
   page,
   label,
   currentPage,
-  onNavigate,
-  variant,
+  variant = "desktop",
 }: NavigationItemProps) {
-  const handleClick = () => {
-    onNavigate(page);
-  };
-
   const getClasses = () => {
     const baseClasses = "transition-colors";
     const isActive = currentPage === page;
@@ -29,14 +35,12 @@ export function NavigationItem({
   };
 
   return (
-    <button
-      onClick={handleClick}
+    <Link
+      href={getPagePath(page)}
       className={getClasses()}
       aria-label={`Navigate to ${label} page`}
-      role="button"
-      tabIndex={0}
     >
       {label}
-    </button>
+    </Link>
   );
 }

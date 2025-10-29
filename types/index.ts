@@ -41,7 +41,7 @@ export type {
 export type { ContactInfo } from "@/data/contact";
 export type { BrandInfo } from "@/data/brand";
 
-// Component types - Note: Most component props use WithNavigation or WithNavigationAndPage directly
+// Component types
 export type { MobileMenuProps } from "./components/features";
 
 export type {
@@ -75,9 +75,6 @@ export type {
   IconType,
   StringIconType,
   // Component prop utility types
-  WithNavigation,
-  WithCurrentPage,
-  WithNavigationAndPage,
   WithOnBook,
   WithOptionalDelay,
 } from "./common/shared";

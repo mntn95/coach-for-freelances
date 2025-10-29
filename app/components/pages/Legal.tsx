@@ -1,3 +1,5 @@
+"use client";
+
 import { legalData } from "@/data/legal";
 import { LegalContentSection } from "../features/legal/LegalContentSection";
 import { LegalHeroSection } from "../features/legal/LegalHeroSection";

@@ -1,17 +1,10 @@
+import Link from "next/link";
 import { homeData } from "@/data/home";
 import { featuredServices } from "@/data/services";
-import { useNavigation } from "@/hooks/useNavigation";
-import type { WithNavigation } from "@/types";
-import type { Page } from "@/types/navigation";
 import { ScrollReveal } from "../../ui/ScrollReveal";
 import { ServiceCard } from "../cards/ServiceCard";
 
-export function ServicesSection({ onNavigate }: WithNavigation) {
-  const { navigate } = useNavigation();
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    navigate();
-  };
+export function ServicesSection() {
 
   return (
     <section className="py-20 bg-gray-50">
@@ -34,7 +27,6 @@ export function ServicesSection({ onNavigate }: WithNavigation) {
               description={service.description}
               price={service.price}
               features={service.features}
-              onBook={() => handleNavigate("booking")}
               delay={index * 0.1}
             />
           ))}
@@ -42,12 +34,12 @@ export function ServicesSection({ onNavigate }: WithNavigation) {
 
         <ScrollReveal delay={0.4}>
           <div className="text-center mt-12">
-            <button
-              onClick={() => handleNavigate("services")}
+            <Link
+              href="/services"
               className="text-purple-600 hover:text-purple-700 underline"
             >
               {homeData.services.linkText}
-            </button>
+            </Link>
           </div>
         </ScrollReveal>
       </div>

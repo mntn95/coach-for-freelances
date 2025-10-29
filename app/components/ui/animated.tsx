@@ -1,3 +1,5 @@
+"use client";
+
 import { ScrollReveal } from "./ScrollReveal";
 import { AnimatedSectionProps } from "@/types";
 

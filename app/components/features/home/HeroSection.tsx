@@ -1,18 +1,12 @@
+"use client";
+
+import Link from "next/link";
 import { homeData } from "@/data/home";
-import { useNavigation } from "@/hooks/useNavigation";
-import type { WithNavigation } from "@/types";
-import type { Page } from "@/types/navigation";
 import { CTAButton } from "../../ui/CTAButton";
 import { ScrollReveal } from "../../ui/ScrollReveal";
 import { Image } from "../../ui/image";
 
-export function HeroSection({ onNavigate }: WithNavigation) {
-  const { navigate } = useNavigation();
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    navigate();
-  };
-
+export function HeroSection() {
   return (
     <section className="relative bg-gradient-to-br from-purple-600 via-purple-700 to-blue-600 text-white overflow-hidden">
       <div className="absolute inset-0 bg-black/10"></div>
@@ -37,19 +31,16 @@ export function HeroSection({ onNavigate }: WithNavigation) {
 
             <ScrollReveal delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <CTAButton
-                  onClick={() => handleNavigate("booking")}
-                  variant="secondary"
-                >
-                  {homeData.hero.primaryButton}
-                </CTAButton>
-                <CTAButton
-                  onClick={() => handleNavigate("about")}
-                  variant="outline"
-                  icon={false}
-                >
-                  {homeData.hero.secondaryButton}
-                </CTAButton>
+                <Link href="/booking" className="inline-block">
+                  <CTAButton variant="secondary" onClick={() => {}}>
+                    {homeData.hero.primaryButton}
+                  </CTAButton>
+                </Link>
+                <Link href="/about" className="inline-block">
+                  <CTAButton variant="outline" icon={false} onClick={() => {}}>
+                    {homeData.hero.secondaryButton}
+                  </CTAButton>
+                </Link>
               </div>
             </ScrollReveal>
           </div>

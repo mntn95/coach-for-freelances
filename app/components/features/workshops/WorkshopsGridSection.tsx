@@ -1,17 +1,10 @@
+"use client";
+
 import { workshops, workshopsPageData } from "@/data/workshops";
-import { useNavigation } from "@/hooks/useNavigation";
-import type { WithNavigation } from "@/types";
-import type { Page } from "@/types/navigation";
 import { AnimatedSection } from "../../ui/animated";
 import { WorkshopCard } from "../cards/WorkshopCard";
 
-export function WorkshopsGridSection({ onNavigate }: WithNavigation) {
-  const { navigate } = useNavigation();
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    navigate();
-  };
-
+export function WorkshopsGridSection() {
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +24,6 @@ export function WorkshopsGridSection({ onNavigate }: WithNavigation) {
             <WorkshopCard
               key={`workshop-${workshop.title}-${index}`}
               {...workshop}
-              onBook={() => handleNavigate("booking")}
               delay={index * 0.1}
             />
           ))}

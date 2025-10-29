@@ -3,16 +3,15 @@ import { FAQSection } from "../features/services/FAQSection";
 import { ProcessSection } from "../features/services/ProcessSection";
 import { ServicesGridSection } from "../features/services/ServicesGridSection";
 import { ServicesHeroSection } from "../features/services/ServicesHeroSection";
-import type { WithNavigation } from "@/types";
 
-export function Services({ onNavigate }: WithNavigation) {
+export function Services() {
   return (
     <div>
       <ServicesHeroSection />
-      <ServicesGridSection onNavigate={onNavigate} />
+      <ServicesGridSection />
       <ProcessSection />
       <FAQSection />
-      <CTASection onNavigate={onNavigate} />
+      <CTASection />
     </div>
   );
 }

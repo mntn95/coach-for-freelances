@@ -1,17 +1,11 @@
+"use client";
+
+import Link from "next/link";
 import { homeData } from "@/data/home";
-import { useNavigation } from "@/hooks/useNavigation";
-import type { WithNavigation } from "@/types";
-import type { Page } from "@/types/navigation";
 import { CTAButton } from "../../ui/CTAButton";
 import { ScrollReveal } from "../../ui/ScrollReveal";
 
-export function CTASection({ onNavigate }: WithNavigation) {
-  const { navigate } = useNavigation();
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    navigate();
-  };
-
+export function CTASection() {
   return (
     <section className="py-20 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -24,12 +18,11 @@ export function CTASection({ onNavigate }: WithNavigation) {
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
-          <CTAButton
-            onClick={() => handleNavigate("booking")}
-            variant="secondary"
-          >
-            {homeData.cta.buttonText}
-          </CTAButton>
+          <Link href="/booking" className="inline-block">
+            <CTAButton variant="secondary" onClick={() => {}}>
+              {homeData.cta.buttonText}
+            </CTAButton>
+          </Link>
         </ScrollReveal>
       </div>
     </section>

@@ -14,7 +14,7 @@ export interface TestimonialCardProps extends WithOptionalDelay {
   rating: number;
 }
 
-export interface ServiceCardProps extends WithOnBook, WithOptionalDelay {
+export interface ServiceCardProps extends WithOptionalDelay {
   icon: LucideIcon;
   title: string;
   description: string;
@@ -22,7 +22,7 @@ export interface ServiceCardProps extends WithOnBook, WithOptionalDelay {
   features: string[];
 }
 
-export interface WorkshopCardProps extends WithOnBook, WithOptionalDelay {
+export interface WorkshopCardProps extends WithOptionalDelay {
   title: string;
   description: string;
   date: string;

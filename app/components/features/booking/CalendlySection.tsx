@@ -1,3 +1,5 @@
+"use client";
+
 import { bookingData } from "@/data/booking";
 import { isClient, safeDocument } from "@/lib/utils";
 import { Calendar } from "lucide-react";

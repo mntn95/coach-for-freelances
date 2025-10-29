@@ -3,35 +3,9 @@
  * These types eliminate duplications and provide consistent interfaces
  */
 
-import { Page } from "../navigation";
-
 // ============================================================================
 // COMPONENT PROP UTILITY TYPES
 // ============================================================================
-
-/**
- * Base type for components that need navigation functionality
- * Eliminates duplication of onNavigate: (page: Page) => void
- */
-export interface WithNavigation {
-  onNavigate: (page: Page) => void;
-}
-
-/**
- * Base type for components that need to know the current page
- * Eliminates duplication of currentPage: Page
- */
-export interface WithCurrentPage {
-  currentPage: Page;
-}
-
-/**
- * Base type for components that need both navigation and current page
- * Combines WithNavigation and WithCurrentPage
- */
-export interface WithNavigationAndPage
-  extends WithNavigation,
-    WithCurrentPage {}
 
 /**
  * Base type for components that have a booking callback

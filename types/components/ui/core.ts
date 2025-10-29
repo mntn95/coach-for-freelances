@@ -74,8 +74,3 @@ export interface SectionProps {
   padding?: "sm" | "md" | "lg" | "xl";
   containerSize?: "sm" | "md" | "lg" | "xl" | "full";
 }
-
-
-
-
-
