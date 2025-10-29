@@ -14,30 +14,33 @@ export function PrivacyContentSection() {
                 <ul className="list-disc pl-6 space-y-2 text-gray-700">
                   {section.listItems.map((item, itemIndex) => (
                     <li key={itemIndex}>
-                      {item.includes("Calendly") ? (
+                      {item.includes("Calendly") &&
+                      section.serviceLinks?.calendly ? (
                         <>
                           <strong>Calendly :</strong> pour la gestion des
                           rendez-vous (
                           <a
-                            href="https://calendly.com/privacy"
+                            href={section.serviceLinks.calendly.url}
                             className="text-purple-600 hover:underline"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            politique de confidentialité
+                            {section.serviceLinks.calendly.text}
                           </a>
                           )
                         </>
-                      ) : item.includes("Vercel") ? (
+                      ) : item.includes("Vercel") &&
+                        section.serviceLinks?.vercel ? (
                         <>
-                          <strong>Vercel :</strong> pour l'hébergement du site (
+                          <strong>Vercel :</strong> pour l&apos;hébergement du
+                          site (
                           <a
-                            href="https://vercel.com/legal/privacy-policy"
+                            href={section.serviceLinks.vercel.url}
                             className="text-purple-600 hover:underline"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            politique de confidentialité
+                            {section.serviceLinks.vercel.text}
                           </a>
                           )
                         </>
@@ -48,16 +51,14 @@ export function PrivacyContentSection() {
                   ))}
                 </ul>
               )}
-              {section.title === "Utilisation des données" && (
+              {section.additionalInfo && (
                 <p className="text-gray-700 mt-4">
-                  <strong>
-                    Nous ne vendons jamais vos données à des tiers.
-                  </strong>
+                  <strong>{section.additionalInfo}</strong>
                 </p>
               )}
-              {section.title === "Vos droits" && (
+              {section.contactText && (
                 <p className="text-gray-700 mt-4">
-                  Pour exercer vos droits, contactez-nous à :{" "}
+                  {section.contactText}{" "}
                   <a
                     href={`mailto:${legalData.contact.email}`}
                     className="text-purple-600 hover:underline"

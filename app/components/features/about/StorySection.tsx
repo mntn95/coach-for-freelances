@@ -36,7 +36,7 @@ export function StorySection() {
             <AnimatedSection delay={0.6}>
               <div className="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-r-lg">
                 <p className="text-gray-700 italic">
-                  "{aboutData.story.quote}"
+                  &ldquo;{aboutData.story.quote}&rdquo;
                 </p>
               </div>
             </AnimatedSection>

@@ -1,12 +1,4 @@
-import type { Page } from "@/types/navigation";
-
-interface NavigationItemProps {
-  page: Page;
-  label: string;
-  currentPage: Page;
-  onNavigate: (page: Page) => void;
-  variant: "desktop" | "mobile";
-}
+import { NavigationItemProps } from "@/types";
 
 export function NavigationItem({
   page,

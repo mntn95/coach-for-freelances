@@ -1,17 +1,15 @@
 import { workshops, workshopsPageData } from "@/data/workshops";
+import { useNavigation } from "@/hooks/useNavigation";
+import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
 import { AnimatedSection } from "../../ui/animated";
 import { WorkshopCard } from "../../WorkshopCard";
 
-interface WorkshopsGridSectionProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function WorkshopsGridSection({
-  onNavigate,
-}: WorkshopsGridSectionProps) {
+export function WorkshopsGridSection({ onNavigate }: WithNavigation) {
+  const { navigate } = useNavigation();
   const handleNavigate = (page: Page) => {
     onNavigate(page);
+    navigate();
   };
 
   return (

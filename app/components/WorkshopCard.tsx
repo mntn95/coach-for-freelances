@@ -9,18 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-
-interface WorkshopCardProps {
-  title: string;
-  description: string;
-  date: string;
-  duration: string;
-  participants: string;
-  level: string;
-  price: string;
-  onBook: () => void;
-  delay?: number;
-}
+import type { WorkshopCardProps } from "@/types";
 
 export function WorkshopCard({
   title,
@@ -83,7 +72,7 @@ export function WorkshopCard({
             variant="outline"
             className="w-full border-purple-600 text-purple-600 hover:bg-purple-50"
           >
-            S'inscrire
+            S&apos;inscrire
           </Button>
         </CardContent>
       </Card>

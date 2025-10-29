@@ -1,12 +1,9 @@
 import { NAV_LABELS } from "@/constants/navigation";
 import type { Page } from "@/types/navigation";
+import type { WithNavigation } from "@/types";
 import { NavigationButton } from "../../ui/navButton";
 
-interface NavigationSectionProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function NavigationSection({ onNavigate }: NavigationSectionProps) {
+export function NavigationSection({ onNavigate }: WithNavigation) {
   const navigationItems: Array<{ page: Page; label: string }> = [
     { page: "about", label: NAV_LABELS.ABOUT },
     { page: "services", label: NAV_LABELS.SERVICES },

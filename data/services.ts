@@ -3,6 +3,7 @@
  * Contains service offerings with pricing and features
  */
 
+import { ServicesPageData, Service } from "@/types/data/services";
 import {
   Target,
   TrendingUp,
@@ -11,50 +12,6 @@ import {
   Calendar,
   MessageCircle,
 } from "lucide-react";
-
-export interface Service {
-  icon: typeof Target;
-  title: string;
-  description: string;
-  price: string;
-  features: string[];
-}
-
-export interface ProcessStep {
-  step: string;
-  title: string;
-  description: string;
-}
-
-export interface FAQItem {
-  q: string;
-  a: string;
-}
-
-export interface ServicesPageData {
-  hero: {
-    title: string;
-    subtitle: string;
-  };
-  services: {
-    title: string;
-    subtitle: string;
-  };
-  process: {
-    title: string;
-    subtitle: string;
-    steps: ProcessStep[];
-  };
-  faq: {
-    title: string;
-    items: FAQItem[];
-  };
-  cta: {
-    title: string;
-    subtitle: string;
-    buttonText: string;
-  };
-}
 
 export const servicesPageData: ServicesPageData = {
   hero: {

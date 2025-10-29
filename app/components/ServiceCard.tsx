@@ -1,4 +1,3 @@
-import { LucideIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import {
@@ -8,16 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-
-interface ServiceCardProps {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  price: string;
-  features: string[];
-  onBook: () => void;
-  delay?: number;
-}
+import { ServiceCardProps } from "@/types/components/features/cards";
 
 export function ServiceCard({
   icon: Icon,

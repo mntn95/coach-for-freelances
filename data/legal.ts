@@ -3,36 +3,7 @@
  * Contains hero, legal content, and privacy policy content
  */
 
-export interface LegalSection {
-  title: string;
-  content: string;
-  items?: { label: string; value: string }[];
-}
-
-export interface PrivacySection {
-  title: string;
-  content: string;
-  listItems?: string[];
-  contactInfo?: { email: string; phone: string };
-}
-
-export interface LegalData {
-  hero: {
-    title: string;
-    subtitle: string;
-  };
-  tabs: {
-    legal: string;
-    privacy: string;
-  };
-  legal: LegalSection[];
-  privacy: PrivacySection[];
-  contact: {
-    email: string;
-    phone: string;
-  };
-  lastUpdated: string;
-}
+import { LegalData } from "@/types/data/legal";
 
 export const legalData: LegalData = {
   hero: {
@@ -114,6 +85,7 @@ export const legalData: LegalData = {
         "Améliorer nos services",
         "Respecter nos obligations légales",
       ],
+      additionalInfo: "Nous ne vendons jamais vos données à des tiers.",
     },
     {
       title: "Conservation des données",
@@ -130,6 +102,7 @@ export const legalData: LegalData = {
         "Droit d'opposition : vous opposer au traitement de vos données",
         "Droit à la portabilité : récupérer vos données dans un format structuré",
       ],
+      contactText: "Pour exercer vos droits, contactez-nous à :",
     },
     {
       title: "Sécurité",
@@ -140,9 +113,19 @@ export const legalData: LegalData = {
       title: "Services tiers",
       content: "Nous utilisons les services suivants :",
       listItems: [
-        "Calendly : pour la gestion des rendez-vous",
-        "Vercel : pour l'hébergement du site",
+        "Calendly : pour la gestion des rendez-vous (politique de confidentialité)",
+        "Vercel : pour l'hébergement du site (politique de confidentialité)",
       ],
+      serviceLinks: {
+        calendly: {
+          text: "politique de confidentialité",
+          url: "https://calendly.com/privacy",
+        },
+        vercel: {
+          text: "politique de confidentialité",
+          url: "https://vercel.com/legal/privacy-policy",
+        },
+      },
     },
     {
       title: "Contact",

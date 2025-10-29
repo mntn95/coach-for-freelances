@@ -1,13 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
-
-interface CTAButtonProps {
-  onClick: () => void;
-  variant?: "primary" | "secondary" | "outline";
-  children: React.ReactNode;
-  icon?: boolean;
-  className?: string;
-}
+import { CTAButtonProps } from "@/types";
 
 export function CTAButton({
   onClick,

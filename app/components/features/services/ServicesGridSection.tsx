@@ -1,16 +1,16 @@
 import { allServices, servicesPageData } from "@/data/services";
+import { useNavigation } from "@/hooks/useNavigation";
+import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
 import { ServiceCard } from "../../ServiceCard";
 import { AnimatedSection } from "../../ui/animated";
 import { Section } from "../../ui/section";
 
-interface ServicesGridSectionProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function ServicesGridSection({ onNavigate }: ServicesGridSectionProps) {
+export function ServicesGridSection({ onNavigate }: WithNavigation) {
+  const { navigate } = useNavigation();
   const handleNavigate = (page: Page) => {
     onNavigate(page);
+    navigate();
   };
 
   return (

@@ -3,55 +3,10 @@
  * Contains workshop offerings with dates, pricing and details
  */
 
-export interface Workshop {
-  title: string;
-  description: string;
-  date: string;
-  duration: string;
-  participants: string;
-  level: "Débutant" | "Intermédiaire" | "Avancé";
-  price: string;
-}
-
-export interface BenefitItem {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-export interface IncludedItem {
-  text: string;
-}
-
-export interface WorkshopTestimonial {
-  name: string;
-  role: string;
-  text: string;
-}
-
-export interface WorkshopsPageData {
-  hero: {
-    title: string;
-    subtitle: string;
-  };
-  benefits: BenefitItem[];
-  workshops: {
-    title: string;
-    subtitle: string;
-  };
-  included: {
-    title: string;
-    items: IncludedItem[];
-  };
-  testimonials: {
-    title: string;
-  };
-  cta: {
-    title: string;
-    subtitle: string;
-    buttonText: string;
-  };
-}
+import {
+  WorkshopsPageData,
+  Workshop,
+} from "@/types/data/workshops";
 
 export const workshopsPageData: WorkshopsPageData = {
   hero: {

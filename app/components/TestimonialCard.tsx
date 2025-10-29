@@ -2,15 +2,7 @@ import { Star } from "lucide-react";
 import { motion } from "motion/react";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Card, CardContent } from "./ui/card";
-
-interface TestimonialCardProps {
-  name: string;
-  role: string;
-  company: string;
-  content: string;
-  rating: number;
-  delay?: number;
-}
+import { TestimonialCardProps } from "@/types";
 
 export function TestimonialCard({
   name,
@@ -50,7 +42,7 @@ export function TestimonialCard({
           </div>
 
           {/* Content */}
-          <p className="text-gray-600 mb-6 italic">"{content}"</p>
+          <p className="text-gray-600 mb-6 italic">&ldquo;{content}&rdquo;</p>
 
           {/* Author */}
           <div className="flex items-center gap-3">

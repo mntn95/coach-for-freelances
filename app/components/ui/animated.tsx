@@ -1,10 +1,5 @@
 import { ScrollReveal } from "../ScrollReveal";
-
-interface AnimatedSectionProps {
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
-}
+import { AnimatedSectionProps } from "@/types";
 
 export function AnimatedSection({
   children,

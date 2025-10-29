@@ -1,13 +1,7 @@
 import { NAV_ITEMS } from "@/constants/navigation";
 import type { Page } from "@/types/navigation";
+import type { MobileMenuProps } from "@/types/components/features";
 import { Button } from "../../ui/button";
-
-interface MobileMenuProps {
-  isOpen: boolean;
-  onToggle: () => void;
-  currentPage: Page;
-  onNavigate: (page: Page) => void;
-}
 
 export function MobileMenu({
   isOpen,

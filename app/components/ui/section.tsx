@@ -3,16 +3,8 @@
  * Handles common section patterns with background variants
  */
 
-import { ReactNode } from "react";
 import { Container } from "./container";
-
-interface SectionProps {
-  children: ReactNode;
-  className?: string;
-  background?: "white" | "gray" | "gradient" | "transparent";
-  padding?: "sm" | "md" | "lg" | "xl";
-  containerSize?: "sm" | "md" | "lg" | "xl" | "full";
-}
+import { SectionProps } from "@/types";
 
 const backgroundClasses = {
   white: "bg-white",

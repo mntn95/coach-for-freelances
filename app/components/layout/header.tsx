@@ -1,23 +1,18 @@
 import { useNavigation } from "@/hooks/useNavigation";
-import type { Page } from "@/types/navigation";
+import type { Page, WithNavigationAndPage } from "@/types";
 import { Menu, X } from "lucide-react";
 import { useMobileMenu } from "../../hooks/useMobileMenu";
 import { DesktopNavigation } from "../features/header/DesktopNavigation";
 import { HeaderBrandSection } from "../features/header/HeaderBrandSection";
 import { MobileMenu } from "../features/header/MobileMenu";
 
-interface HeaderProps {
-  currentPage: Page;
-  onNavigate: (page: Page) => void;
-}
-
-export function Header({ currentPage, onNavigate }: HeaderProps) {
+export function Header({ currentPage, onNavigate }: WithNavigationAndPage) {
   const { navigate } = useNavigation();
   const { isOpen, toggle } = useMobileMenu();
 
   const handleNavigate = (page: Page) => {
     onNavigate(page);
-    navigate(page);
+    navigate();
   };
 
   return (

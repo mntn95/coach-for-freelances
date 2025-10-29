@@ -1,16 +1,16 @@
 import { homeData } from "@/data/home";
+import { useNavigation } from "@/hooks/useNavigation";
+import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
 import { CTAButton } from "../../CTAButton";
 import { ScrollReveal } from "../../ScrollReveal";
 import { Image } from "../../ui/image";
 
-interface HeroSectionProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function HeroSection({ onNavigate }: HeroSectionProps) {
+export function HeroSection({ onNavigate }: WithNavigation) {
+  const { navigate } = useNavigation();
   const handleNavigate = (page: Page) => {
     onNavigate(page);
+    navigate();
   };
 
   return (

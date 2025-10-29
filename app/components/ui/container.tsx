@@ -3,13 +3,7 @@
  * Provides consistent layout spacing across all pages
  */
 
-import { ReactNode } from "react";
-
-interface ContainerProps {
-  children: ReactNode;
-  className?: string;
-  size?: "sm" | "md" | "lg" | "xl" | "full";
-}
+import { ContainerProps } from "@/types";
 
 const sizeClasses = {
   sm: "max-w-3xl",

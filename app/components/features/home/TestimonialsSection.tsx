@@ -1,16 +1,16 @@
 import { homeData } from "@/data/home";
 import { testimonials } from "@/data/testimonials";
+import { useNavigation } from "@/hooks/useNavigation";
+import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
 import { ScrollReveal } from "../../ScrollReveal";
 import { TestimonialCard } from "../../TestimonialCard";
 
-interface TestimonialsSectionProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function TestimonialsSection({ onNavigate }: TestimonialsSectionProps) {
+export function TestimonialsSection({ onNavigate }: WithNavigation) {
+  const { navigate } = useNavigation();
   const handleNavigate = (page: Page) => {
     onNavigate(page);
+    navigate();
   };
 
   return (

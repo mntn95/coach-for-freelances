@@ -12,7 +12,13 @@ export function BenefitsSection() {
               delay={index * 0.1}
             >
               <div className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
+                <div className="text-4xl mb-4">
+                  {typeof benefit.icon === "string" ? (
+                    benefit.icon
+                  ) : (
+                    <benefit.icon className="w-8 h-8 mx-auto" />
+                  )}
+                </div>
                 <h3 className="text-gray-900 mb-2">{benefit.title}</h3>
                 <p className="text-sm text-gray-600">{benefit.description}</p>
               </div>

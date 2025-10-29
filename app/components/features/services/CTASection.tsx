@@ -1,15 +1,15 @@
 import { servicesPageData } from "@/data/services";
+import { useNavigation } from "@/hooks/useNavigation";
+import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
 import { AnimatedSection } from "../../ui/animated";
 import { Section } from "../../ui/section";
 
-interface CTASectionProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function CTASection({ onNavigate }: CTASectionProps) {
+export function CTASection({ onNavigate }: WithNavigation) {
+  const { navigate } = useNavigation();
   const handleNavigate = (page: Page) => {
     onNavigate(page);
+    navigate();
   };
 
   return (

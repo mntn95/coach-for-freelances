@@ -1,10 +1,4 @@
-import type { Page } from "@/types/navigation";
-
-interface NavigationButtonProps {
-  page: Page;
-  label: string;
-  onClick: (page: Page) => void;
-}
+import type { NavigationButtonProps } from "@/types";
 
 export function NavigationButton({
   page,

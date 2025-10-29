@@ -1,12 +1,8 @@
 import { brandInfo } from "@/data/brand";
-import type { Page } from "@/types/navigation";
+import type { WithNavigation } from "@/types";
 import { Image } from "../../ui/image";
 
-interface HeaderBrandSectionProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function HeaderBrandSection({ onNavigate }: HeaderBrandSectionProps) {
+export function HeaderBrandSection({ onNavigate }: WithNavigation) {
   const handleClick = () => {
     onNavigate("home");
   };

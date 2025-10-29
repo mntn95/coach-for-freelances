@@ -1,16 +1,16 @@
 import { homeData } from "@/data/home";
 import { featuredServices } from "@/data/services";
+import { useNavigation } from "@/hooks/useNavigation";
+import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
 import { ScrollReveal } from "../../ScrollReveal";
 import { ServiceCard } from "../../ServiceCard";
 
-interface ServicesSectionProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function ServicesSection({ onNavigate }: ServicesSectionProps) {
+export function ServicesSection({ onNavigate }: WithNavigation) {
+  const { navigate } = useNavigation();
   const handleNavigate = (page: Page) => {
     onNavigate(page);
+    navigate();
   };
 
   return (

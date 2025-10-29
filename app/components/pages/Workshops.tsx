@@ -4,19 +4,15 @@ import { WorkshopsGridSection } from "../features/workshops/WorkshopsGridSection
 import { IncludedSection } from "../features/workshops/IncludedSection";
 import { TestimonialsSection } from "../features/workshops/TestimonialsSection";
 import { CTASection } from "../features/workshops/CTASection";
-import type { Page } from "@/types/navigation";
+import type { Page, WithNavigation } from "@/types";
 import { useNavigation } from "@/hooks/useNavigation";
 
-interface WorkshopsProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function Workshops({ onNavigate }: WorkshopsProps) {
+export function Workshops({ onNavigate }: WithNavigation) {
   const { navigate } = useNavigation();
 
   const handleNavigate = (page: Page) => {
     onNavigate(page);
-    navigate(page);
+    navigate();
   };
 
   return (

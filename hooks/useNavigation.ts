@@ -15,7 +15,7 @@ export const useNavigation = () => {
    *
    * @param page - The page to navigate to
    */
-  const navigate = useCallback((page: Page) => {
+  const navigate = useCallback(() => {
     // Safe scroll to top with SSR check
     safeScrollToTop();
   }, []);

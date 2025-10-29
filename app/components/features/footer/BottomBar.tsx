@@ -1,13 +1,9 @@
 import { NAV_LABELS } from "@/constants/navigation";
 import { brandInfo } from "@/data/brand";
-import type { Page } from "@/types/navigation";
+import type { WithNavigation } from "@/types";
 import { NavigationButton } from "../../ui/navButton";
 
-interface BottomBarProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function BottomBar({ onNavigate }: BottomBarProps) {
+export function BottomBar({ onNavigate }: WithNavigation) {
   return (
     <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
       <p className="text-sm text-gray-400">

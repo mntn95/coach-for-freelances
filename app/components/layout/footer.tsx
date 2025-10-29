@@ -1,20 +1,16 @@
 import { useNavigation } from "@/hooks/useNavigation";
-import type { Page } from "@/types/navigation";
+import type { Page, WithNavigation } from "@/types";
 import { BottomBar } from "../features/footer/BottomBar";
 import { BrandSection } from "../features/footer/BrandSection";
 import { ContactSection } from "../features/footer/ContactSection";
 import { NavigationSection } from "../features/footer/NavigationSection";
 
-interface FooterProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function Footer({ onNavigate }: FooterProps) {
+export function Footer({ onNavigate }: WithNavigation) {
   const { navigate } = useNavigation();
 
   const handleNavigate = (page: Page) => {
     onNavigate(page);
-    navigate(page);
+    navigate();
   };
 
   return (

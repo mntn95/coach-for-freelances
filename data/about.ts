@@ -3,50 +3,8 @@
  * Contains Laura's story, values, expertise, and certifications
  */
 
+import { AboutData } from "@/types/data/about";
 import { CheckCircle2, Heart, Target, TrendingUp } from "lucide-react";
-
-export interface ValueItem {
-  icon: typeof Heart;
-  title: string;
-  description: string;
-}
-
-export interface CertificationItem {
-  title: string;
-  org: string;
-  year: string;
-}
-
-export interface AboutData {
-  hero: {
-    title: string;
-    subtitle: string;
-  };
-  story: {
-    title: string;
-    paragraphs: string[];
-    quote: string;
-  };
-  values: {
-    title: string;
-    subtitle: string;
-    items: ValueItem[];
-  };
-  expertise: {
-    title: string;
-    description: string;
-    skills: string[];
-    certifications: {
-      title: string;
-      subtitle: string;
-      items: CertificationItem[];
-    };
-  };
-  mission: {
-    title: string;
-    paragraphs: string[];
-  };
-}
 
 export const aboutData: AboutData = {
   hero: {

@@ -18,7 +18,9 @@ export function ProblemSection() {
           {homeData.problems.items.map((item, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
               <div className="bg-white p-6 rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all">
-                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="text-4xl mb-4">
+                  {typeof item.icon === "string" ? item.icon : <item.icon />}
+                </div>
                 <h3 className="text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-600">{item.description}</p>
               </div>

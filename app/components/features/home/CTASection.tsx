@@ -1,15 +1,15 @@
 import { homeData } from "@/data/home";
+import { useNavigation } from "@/hooks/useNavigation";
+import type { WithNavigation } from "@/types";
 import type { Page } from "@/types/navigation";
 import { CTAButton } from "../../CTAButton";
 import { ScrollReveal } from "../../ScrollReveal";
 
-interface CTASectionProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function CTASection({ onNavigate }: CTASectionProps) {
+export function CTASection({ onNavigate }: WithNavigation) {
+  const { navigate } = useNavigation();
   const handleNavigate = (page: Page) => {
     onNavigate(page);
+    navigate();
   };
 
   return (
@@ -20,7 +20,7 @@ export function CTASection({ onNavigate }: CTASectionProps) {
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <p className="text-xl text-purple-100 mb-8">
-            {homeData.cta.description}
+            {homeData.cta.subtitle}
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>

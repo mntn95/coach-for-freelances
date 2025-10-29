@@ -1,17 +1,12 @@
 import { Button } from "@/app/components/ui/button";
 import { NavigationItem } from "@/app/components/ui/navItem";
 import { BOOKING_PAGE, NAV_ITEMS, NAV_LABELS } from "@/constants/navigation";
-import type { Page } from "@/types/navigation";
-
-interface DesktopNavigationProps {
-  currentPage: Page;
-  onNavigate: (page: Page) => void;
-}
+import type { WithNavigationAndPage } from "@/types";
 
 export function DesktopNavigation({
   currentPage,
   onNavigate,
-}: DesktopNavigationProps) {
+}: WithNavigationAndPage) {
   return (
     <nav className="hidden md:flex items-center space-x-8">
       {NAV_ITEMS.map((item) => (

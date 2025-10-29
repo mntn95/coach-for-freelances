@@ -3,20 +3,7 @@
  * Handles various badge variants and sizes
  */
 
-import { ReactNode } from "react";
-
-interface BadgeProps {
-  children: ReactNode;
-  variant?:
-    | "default"
-    | "gradient"
-    | "outline"
-    | "success"
-    | "warning"
-    | "error";
-  size?: "sm" | "md" | "lg";
-  className?: string;
-}
+import { BadgeProps } from "@/types";
 
 const variantClasses = {
   default: "bg-gray-100 text-gray-800",

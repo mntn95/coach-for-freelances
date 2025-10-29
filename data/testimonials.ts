@@ -3,56 +3,7 @@
  * Contains client testimonials with ratings and details
  */
 
-export interface Testimonial {
-  name: string;
-  role: string;
-  company: string;
-  content: string;
-  rating: number;
-}
-
-export interface StatItem {
-  value: string;
-  label: string;
-}
-
-export interface SuccessStory {
-  name: string;
-  role: string;
-  before: string;
-  after: string;
-  duration: string;
-  story: string;
-}
-
-export interface VideoTestimonial {
-  id: number;
-  title: string;
-  thumbnail: string;
-}
-
-export interface TestimonialsPageData {
-  hero: {
-    title: string;
-    subtitle: string;
-  };
-  stats: StatItem[];
-  testimonials: {
-    title: string;
-    subtitle: string;
-  };
-  successStories: {
-    title: string;
-    subtitle: string;
-    stories: SuccessStory[];
-  };
-  videoTestimonials: {
-    title: string;
-    subtitle: string;
-    videos: VideoTestimonial[];
-    placeholder: string;
-  };
-}
+import { TestimonialsPageData, Testimonial } from "@/types/data/testimonials";
 
 export const testimonialsPageData: TestimonialsPageData = {
   hero: {
