@@ -1,6 +1,6 @@
 import { workshopsPageData, workshopTestimonials } from "@/data/workshops";
 import { lazy, Suspense } from "react";
-import { AnimatedSection } from "../../ui";
+import { ScrollReveal } from "../../ui";
 
 // Lazy load the testimonials content for better performance
 const TestimonialsContent = lazy(() => import("./TestimonialsContent"));
@@ -9,17 +9,17 @@ export function TestimonialsSection() {
   return (
     <section className="py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
+        <ScrollReveal>
           <h2 className="text-center text-gray-900 mb-12">
             {workshopsPageData.testimonials.title}
           </h2>
-        </AnimatedSection>
+        </ScrollReveal>
 
         <Suspense
           fallback={
             <div className="space-y-6">
               {workshopTestimonials.map((_, index) => (
-                <AnimatedSection
+                <ScrollReveal
                   key={`testimonial-skeleton-${index}`}
                   delay={index * 0.1}
                 >
@@ -30,7 +30,7 @@ export function TestimonialsSection() {
                       <div className="h-4 bg-gray-200 rounded w-32"></div>
                     </div>
                   </div>
-                </AnimatedSection>
+                </ScrollReveal>
               ))}
             </div>
           }

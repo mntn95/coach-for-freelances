@@ -1,11 +1,11 @@
 import { legalData } from "@/data/legal";
-import { AnimatedSection } from "../../ui";
+import { ScrollReveal } from "../../ui";
 
 export function LegalContentSection() {
   return (
     <div className="space-y-8">
       {legalData.legal.map((section, index) => (
-        <AnimatedSection key={index} delay={index * 0.1}>
+        <ScrollReveal key={index} delay={index * 0.1}>
           <div>
             <h2 className="text-gray-900 mb-4">{section.title}</h2>
             {section.items ? (
@@ -38,7 +38,7 @@ export function LegalContentSection() {
               </div>
             )}
           </div>
-        </AnimatedSection>
+        </ScrollReveal>
       ))}
     </div>
   );

@@ -1,6 +1,12 @@
 import { Star } from "lucide-react";
 import { motion } from "motion/react";
-import { Avatar, AvatarFallback, Card, CardContent } from "../../ui";
+import {
+  Avatar,
+  AvatarFallback,
+  Card,
+  CardContent,
+  ScrollReveal,
+} from "../../ui";
 import { TestimonialCardProps } from "@/types";
 
 export function TestimonialCard({
@@ -8,6 +14,7 @@ export function TestimonialCard({
   role,
   company,
   content,
+  isAnimatedOnLoad,
   rating,
   delay = 0,
 }: TestimonialCardProps) {
@@ -17,12 +24,7 @@ export function TestimonialCard({
     .join("");
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-    >
+    <ScrollReveal animatesInView={!isAnimatedOnLoad} delay={delay}>
       <Card className="h-full hover:shadow-lg transition-shadow">
         <CardContent className="pt-6">
           {/* Rating */}
@@ -59,6 +61,6 @@ export function TestimonialCard({
           </div>
         </CardContent>
       </Card>
-    </motion.div>
+    </ScrollReveal>
   );
 }

@@ -7,7 +7,7 @@ import {
   PrivacyContentSection,
 } from "../components/features/legal";
 import {
-  AnimatedSection,
+  ScrollReveal,
   Tabs,
   TabsContent,
   TabsList,
@@ -21,7 +21,7 @@ export default function LegalPage() {
 
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
+          <ScrollReveal animatesInView={false}>
             <Tabs defaultValue="legal" className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-8">
                 <TabsTrigger value="legal">{legalData.tabs.legal}</TabsTrigger>
@@ -38,7 +38,7 @@ export default function LegalPage() {
                 <PrivacyContentSection />
               </TabsContent>
             </Tabs>
-          </AnimatedSection>
+          </ScrollReveal>
         </div>
       </section>
     </div>

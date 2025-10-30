@@ -1,17 +1,17 @@
 import { aboutData } from "@/data/about";
-import { AnimatedSection } from "../../ui";
+import { ScrollReveal } from "../../ui";
 
 export function MissionSection() {
   return (
     <section className="py-20 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
+        <ScrollReveal>
           <h2 className="text-white text-center mb-8">
             {aboutData.mission.title}
           </h2>
-        </AnimatedSection>
+        </ScrollReveal>
         {aboutData.mission.paragraphs.map((paragraph, index) => (
-          <AnimatedSection key={index} delay={0.1 + index * 0.1}>
+          <ScrollReveal key={index} delay={0.1 + index * 0.1}>
             <p
               className={`text-center ${
                 index === 0
@@ -21,7 +21,7 @@ export function MissionSection() {
             >
               {paragraph}
             </p>
-          </AnimatedSection>
+          </ScrollReveal>
         ))}
       </div>
     </section>

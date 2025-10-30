@@ -1,37 +1,44 @@
+"use client";
+
 import { motion } from "motion/react";
 import { ScrollRevealProps } from "@/types";
 
 export function ScrollReveal({
   children,
   delay = 0,
-  direction = "up",
+  animatesInView = true,
   className = "",
 }: ScrollRevealProps) {
-  const directions = {
-    up: { y: 40 },
-    down: { y: -40 },
-    left: { x: 40 },
-    right: { x: -40 },
-  };
-
   return (
     <motion.div
       initial={{
         opacity: 0,
-        ...directions[direction],
+
+        y: 40,
       }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        x: 0,
-      }}
-      viewport={{ once: true, margin: "-100px" }}
+      animate={
+        !animatesInView
+          ? {
+              opacity: 1,
+              y: 0,
+            }
+          : undefined
+      }
+      whileInView={
+        animatesInView
+          ? {
+              opacity: 1,
+              y: 0,
+            }
+          : undefined
+      }
       transition={{
         duration: 0.6,
         delay,
         ease: [0.25, 0.4, 0.25, 1],
       }}
       className={className}
+      viewport={{ once: true }}
     >
       {children}
     </motion.div>

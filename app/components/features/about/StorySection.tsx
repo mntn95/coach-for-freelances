@@ -1,12 +1,12 @@
 import { aboutData } from "@/data/about";
-import { AnimatedSection, Image } from "../../ui";
+import { ScrollReveal, Image } from "../../ui";
 
 export function StorySection() {
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <AnimatedSection>
+          <ScrollReveal animatesInView={false} className="hidden lg:block">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-200 to-blue-200 rounded-2xl transform -rotate-3"></div>
               <Image
@@ -19,26 +19,30 @@ export function StorySection() {
                 context="below-fold"
               />
             </div>
-          </AnimatedSection>
+          </ScrollReveal>
 
           <div className="space-y-6">
-            <AnimatedSection delay={0.2}>
+            <ScrollReveal animatesInView={false} delay={0.2}>
               <h2 className="text-gray-900">{aboutData.story.title}</h2>
-            </AnimatedSection>
+            </ScrollReveal>
 
             {aboutData.story.paragraphs.map((paragraph, index) => (
-              <AnimatedSection key={index} delay={0.3 + index * 0.1}>
+              <ScrollReveal
+                animatesInView={false}
+                key={index}
+                delay={0.3 + index * 0.1}
+              >
                 <p className="text-gray-600">{paragraph}</p>
-              </AnimatedSection>
+              </ScrollReveal>
             ))}
 
-            <AnimatedSection delay={0.6}>
+            <ScrollReveal animatesInView={false} delay={0.6}>
               <div className="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-r-lg">
                 <p className="text-gray-700 italic">
                   &ldquo;{aboutData.story.quote}&rdquo;
                 </p>
               </div>
-            </AnimatedSection>
+            </ScrollReveal>
           </div>
         </div>
       </div>

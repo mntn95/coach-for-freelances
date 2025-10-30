@@ -3,13 +3,13 @@ import {
   testimonialsPageData,
 } from "@/data/testimonials";
 import { TestimonialCard } from "../cards/TestimonialCard";
-import { AnimatedSection, Section } from "../../ui";
+import { ScrollReveal, Section } from "../../ui";
 
 export function TestimonialsGridSection() {
   return (
     <Section containerSize="lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
+        <ScrollReveal animatesInView={false}>
           <div className="text-center mb-16">
             <h2 className="text-gray-900 mb-4">
               {testimonialsPageData.testimonials.title}
@@ -18,7 +18,7 @@ export function TestimonialsGridSection() {
               {testimonialsPageData.testimonials.subtitle}
             </p>
           </div>
-        </AnimatedSection>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {extendedTestimonials.map((testimonial, index) => (
@@ -26,6 +26,7 @@ export function TestimonialsGridSection() {
               key={`testimonial-${testimonial.name}-${index}`}
               {...testimonial}
               delay={index * 0.05}
+              isAnimatedOnLoad={index <= 2}
             />
           ))}
         </div>

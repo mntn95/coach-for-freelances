@@ -18,9 +18,6 @@ export interface AnimatedSectionProps {
 export interface ScrollRevealProps {
   children: ReactNode;
   delay?: number;
-  direction?: "up" | "down" | "left" | "right";
+  animatesInView?: boolean;
   className?: string;
 }
-
-
-

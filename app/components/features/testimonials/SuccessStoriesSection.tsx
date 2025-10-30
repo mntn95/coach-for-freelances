@@ -1,11 +1,11 @@
 import { testimonialsPageData } from "@/data/testimonials";
-import { AnimatedSection, Section } from "../../ui";
+import { ScrollReveal, Section } from "../../ui";
 
 export function SuccessStoriesSection() {
   return (
     <Section background="gray" containerSize="lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
+        <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="text-gray-900 mb-4">
               {testimonialsPageData.successStories.title}
@@ -14,11 +14,11 @@ export function SuccessStoriesSection() {
               {testimonialsPageData.successStories.subtitle}
             </p>
           </div>
-        </AnimatedSection>
+        </ScrollReveal>
 
         <div className="space-y-12">
           {testimonialsPageData.successStories.stories.map((story, index) => (
-            <AnimatedSection
+            <ScrollReveal
               key={`story-${story.name}-${index}`}
               delay={index * 0.1}
             >
@@ -55,7 +55,7 @@ export function SuccessStoriesSection() {
                   </div>
                 </div>
               </div>
-            </AnimatedSection>
+            </ScrollReveal>
           ))}
         </div>
       </div>

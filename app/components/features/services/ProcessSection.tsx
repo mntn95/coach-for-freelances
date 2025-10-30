@@ -1,10 +1,10 @@
 import { servicesPageData } from "@/data/services";
-import { AnimatedSection, Section } from "../../ui";
+import { ScrollReveal, Section } from "../../ui";
 
 export function ProcessSection() {
   return (
     <Section containerSize="lg" background="gray">
-      <AnimatedSection>
+      <ScrollReveal>
         <div className="text-center mb-16">
           <h2 className="text-gray-900 mb-4">
             {servicesPageData.process.title}
@@ -13,11 +13,11 @@ export function ProcessSection() {
             {servicesPageData.process.subtitle}
           </p>
         </div>
-      </AnimatedSection>
+      </ScrollReveal>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {servicesPageData.process.steps.map((step, index) => (
-          <AnimatedSection
+          <ScrollReveal
             key={`process-${step.step}-${index}`}
             delay={index * 0.1}
           >
@@ -28,7 +28,7 @@ export function ProcessSection() {
               <h3 className="text-gray-900 mb-2">{step.title}</h3>
               <p className="text-sm text-gray-600">{step.description}</p>
             </div>
-          </AnimatedSection>
+          </ScrollReveal>
         ))}
       </div>
     </Section>

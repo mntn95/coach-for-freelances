@@ -4,7 +4,7 @@ import { bookingData } from "@/data/booking";
 import { isClient, safeDocument } from "@/lib/utils";
 import { Calendar } from "lucide-react";
 import { useEffect } from "react";
-import { AnimatedSection } from "../../ui";
+import { ScrollReveal } from "../../ui";
 
 export function CalendlySection() {
   useEffect(() => {
@@ -35,16 +35,16 @@ export function CalendlySection() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
+        <ScrollReveal>
           <div className="text-center mb-12">
             <h2 className="text-gray-900 mb-4">{bookingData.calendly.title}</h2>
             <p className="text-xl text-gray-600">
               {bookingData.calendly.subtitle}
             </p>
           </div>
-        </AnimatedSection>
+        </ScrollReveal>
 
-        <AnimatedSection delay={0.2}>
+        <ScrollReveal delay={0.2}>
           <div className="bg-white rounded-2xl shadow-xl p-8">
             {/* Calendly Widget */}
             <div
@@ -69,7 +69,7 @@ export function CalendlySection() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </ScrollReveal>
       </div>
     </section>
   );

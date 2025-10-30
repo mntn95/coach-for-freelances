@@ -1,11 +1,11 @@
 import { workshopTestimonials } from "@/data/workshops";
-import { AnimatedSection } from "../../ui";
+import { ScrollReveal } from "../../ui";
 
 export default function TestimonialsContent() {
   return (
     <div className="space-y-6">
       {workshopTestimonials.map((testimonial, index) => (
-        <AnimatedSection
+        <ScrollReveal
           key={`testimonial-${testimonial.name}-${index}`}
           delay={index * 0.1}
         >
@@ -26,7 +26,7 @@ export default function TestimonialsContent() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </ScrollReveal>
       ))}
     </div>
   );

@@ -1,11 +1,11 @@
 import { testimonialsPageData } from "@/data/testimonials";
-import { AnimatedSection, Image } from "../../ui";
+import { ScrollReveal, Image } from "../../ui";
 
 export default function VideoTestimonialsContent() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {testimonialsPageData.videoTestimonials.videos.map((video, index) => (
-        <AnimatedSection key={`video-${video.id}-${index}`} delay={index * 0.1}>
+        <ScrollReveal key={`video-${video.id}-${index}`} delay={index * 0.1}>
           <div className="relative aspect-video bg-gray-200 rounded-xl overflow-hidden group cursor-pointer">
             <Image
               src={video.thumbnail}
@@ -29,7 +29,7 @@ export default function VideoTestimonialsContent() {
               <div className="text-white text-sm">{video.title}</div>
             </div>
           </div>
-        </AnimatedSection>
+        </ScrollReveal>
       ))}
     </div>
   );

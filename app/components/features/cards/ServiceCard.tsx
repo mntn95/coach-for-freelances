@@ -9,6 +9,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  ScrollReveal,
 } from "../../ui";
 import { ServiceCardProps } from "@/types/components/features/cards";
 
@@ -19,15 +20,10 @@ export function ServiceCard({
   price,
   features,
   delay = 0,
+  isAnimatedOnLoad,
 }: ServiceCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      whileHover={{ y: -8, transition: { duration: 0.2 } }}
-    >
+    <ScrollReveal animatesInView={!isAnimatedOnLoad} delay={delay}>
       <Card className="h-full border-2 hover:border-purple-300 transition-all hover:shadow-xl">
         <CardHeader>
           <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-blue-100 rounded-xl flex items-center justify-center mb-4">
@@ -67,6 +63,6 @@ export function ServiceCard({
           </Link>
         </CardContent>
       </Card>
-    </motion.div>
+    </ScrollReveal>
   );
 }

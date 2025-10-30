@@ -1,5 +1,5 @@
 import { testimonialsPageData } from "@/data/testimonials";
-import { AnimatedSection, Section } from "../../ui";
+import { ScrollReveal, Section } from "../../ui";
 
 export function StatsSection() {
   return (
@@ -7,7 +7,8 @@ export function StatsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {testimonialsPageData.stats.map((stat, index) => (
-            <AnimatedSection
+            <ScrollReveal
+              animatesInView={false}
               key={`stat-${stat.value}-${index}`}
               delay={index * 0.1}
             >
@@ -15,7 +16,7 @@ export function StatsSection() {
                 <div className="text-purple-600 mb-2">{stat.value}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
-            </AnimatedSection>
+            </ScrollReveal>
           ))}
         </div>
       </div>

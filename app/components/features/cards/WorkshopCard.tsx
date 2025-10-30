@@ -11,10 +11,12 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  ScrollReveal,
 } from "../../ui";
 import type { WorkshopCardProps } from "@/types";
 
 export function WorkshopCard({
+  isAnimatedOnLoad,
   title,
   description,
   date,
@@ -31,13 +33,7 @@ export function WorkshopCard({
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay }}
-      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-    >
+    <ScrollReveal animatesInView={!isAnimatedOnLoad} delay={delay}>
       <Card className="h-full hover:shadow-xl transition-shadow">
         <CardHeader>
           <div className="flex justify-between items-start mb-2">
@@ -72,13 +68,13 @@ export function WorkshopCard({
           <Link href="/booking" className="block">
             <Button
               variant="outline"
-              className="w-full border-purple-600 text-purple-600 hover:bg-purple-50"
+              className="w-full border-purple-600 text-purple-600 hover:bg-purple-50 hover:text-purple-600"
             >
               S&apos;inscrire
             </Button>
           </Link>
         </CardContent>
       </Card>
-    </motion.div>
+    </ScrollReveal>
   );
 }

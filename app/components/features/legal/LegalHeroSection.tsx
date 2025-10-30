@@ -1,16 +1,16 @@
 import { legalData } from "@/data/legal";
-import { AnimatedSection } from "../../ui";
+import { ScrollReveal } from "../../ui";
 
 export function LegalHeroSection() {
   return (
     <section className="bg-gradient-to-br from-purple-600 to-blue-600 text-white py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <AnimatedSection>
+        <ScrollReveal>
           <h1 className="text-white mb-6">{legalData.hero.title}</h1>
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
           <p className="text-xl text-purple-100">{legalData.hero.subtitle}</p>
-        </AnimatedSection>
+        </ScrollReveal>
       </div>
     </section>
   );

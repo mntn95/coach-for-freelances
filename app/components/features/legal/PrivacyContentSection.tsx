@@ -1,11 +1,11 @@
 import { legalData } from "@/data/legal";
-import { AnimatedSection } from "../../ui";
+import { ScrollReveal } from "../../ui";
 
 export function PrivacyContentSection() {
   return (
     <div className="space-y-8">
       {legalData.privacy.map((section, index) => (
-        <AnimatedSection key={index} delay={index * 0.1}>
+        <ScrollReveal key={index} delay={index * 0.1}>
           <div>
             <h2 className="text-gray-900 mb-4">{section.title}</h2>
             <div className="prose prose-gray max-w-none">
@@ -79,13 +79,13 @@ export function PrivacyContentSection() {
               )}
             </div>
           </div>
-        </AnimatedSection>
+        </ScrollReveal>
       ))}
-      <AnimatedSection delay={legalData.privacy.length * 0.1}>
+      <ScrollReveal delay={legalData.privacy.length * 0.1}>
         <p className="text-sm text-gray-500 italic">
           Dernière mise à jour : {legalData.lastUpdated}
         </p>
-      </AnimatedSection>
+      </ScrollReveal>
     </div>
   );
 }

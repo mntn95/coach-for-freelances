@@ -4,9 +4,10 @@
  */
 
 import { LucideIcon } from "lucide-react";
-import { WithOnBook, WithOptionalDelay } from "../../common/shared";
+import { WithOptionalDelay } from "../../common/shared";
 
 export interface TestimonialCardProps extends WithOptionalDelay {
+  isAnimatedOnLoad?: boolean;
   name: string;
   role: string;
   company: string;
@@ -15,6 +16,7 @@ export interface TestimonialCardProps extends WithOptionalDelay {
 }
 
 export interface ServiceCardProps extends WithOptionalDelay {
+  isAnimatedOnLoad?: boolean;
   icon: LucideIcon;
   title: string;
   description: string;
@@ -23,6 +25,7 @@ export interface ServiceCardProps extends WithOptionalDelay {
 }
 
 export interface WorkshopCardProps extends WithOptionalDelay {
+  isAnimatedOnLoad?: boolean;
   title: string;
   description: string;
   date: string;
