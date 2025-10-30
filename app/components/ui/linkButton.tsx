@@ -1,14 +1,14 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "./button";
-import { CTAButtonProps } from "@/types";
+import { LinkButtonProps } from "@/types";
 
-export function CTAButton({
+export function LinkButton({
   onClick,
   variant = "primary",
   children,
   icon = true,
   className = "",
-}: CTAButtonProps) {
+}: LinkButtonProps) {
   const variants = {
     primary:
       "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white hover:text-white",

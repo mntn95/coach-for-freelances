@@ -1,6 +1,21 @@
-import { About } from "../components/pages/About";
+"use client";
+
+import {
+  AboutHeroSection,
+  StorySection,
+  ValuesSection,
+  ExpertiseSection,
+  MissionSection,
+} from "../components/features/about";
 
 export default function AboutPage() {
-  return <About />;
+  return (
+    <div>
+      <AboutHeroSection />
+      <StorySection />
+      <ValuesSection />
+      <ExpertiseSection />
+      <MissionSection />
+    </div>
+  );
 }
-

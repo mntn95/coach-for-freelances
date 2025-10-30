@@ -1,5 +1,5 @@
 import { workshopsPageData } from "@/data/workshops";
-import { AnimatedSection } from "../../ui/animated";
+import { AnimatedSection } from "../../ui";
 
 export function WorkshopsHeroSection() {
   return (

@@ -1,6 +1,5 @@
 import { testimonialsPageData } from "@/data/testimonials";
-import { AnimatedSection } from "../../ui/animated";
-import { Image } from "../../ui/image";
+import { AnimatedSection, Image } from "../../ui";
 
 export default function VideoTestimonialsContent() {
   return (

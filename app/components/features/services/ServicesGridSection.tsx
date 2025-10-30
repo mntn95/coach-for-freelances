@@ -3,11 +3,9 @@
 import Link from "next/link";
 import { allServices, servicesPageData } from "@/data/services";
 import { ServiceCard } from "../cards/ServiceCard";
-import { AnimatedSection } from "../../ui/animated";
-import { Section } from "../../ui/section";
+import { AnimatedSection, Section } from "../../ui";
 
 export function ServicesGridSection() {
-
   return (
     <Section containerSize="lg">
       <AnimatedSection>

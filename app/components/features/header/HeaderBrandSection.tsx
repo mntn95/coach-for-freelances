@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { brandInfo } from "@/data/brand";
-import { Image } from "../../ui/image";
+import { Image } from "../../ui";
 
 export function HeaderBrandSection() {
   return (

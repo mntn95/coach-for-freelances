@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { workshopsPageData } from "@/data/workshops";
-import { AnimatedSection } from "../../ui/animated";
+import { AnimatedSection } from "../../ui";
 
 export function CTASection() {
-
   return (
     <section className="py-20 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

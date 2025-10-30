@@ -1,6 +1,21 @@
-import { Booking } from "../components/pages/Booking";
+"use client";
+
+import {
+  BookingHeroSection,
+  InfoSection,
+  ExpectationsSection,
+  FAQSection,
+  CalendlySection,
+} from "../components/features/booking";
 
 export default function BookingPage() {
-  return <Booking />;
+  return (
+    <div>
+      <BookingHeroSection />
+      <InfoSection />
+      <ExpectationsSection />
+      <CalendlySection />
+      <FAQSection />
+    </div>
+  );
 }
-

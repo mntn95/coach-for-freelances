@@ -1,7 +1,6 @@
 import { testimonialsPageData } from "@/data/testimonials";
 import { lazy, Suspense } from "react";
-import { AnimatedSection } from "../../ui/animated";
-import { Section } from "../../ui/section";
+import { AnimatedSection, Section } from "../../ui";
 
 // Lazy load the video testimonials section for better performance
 const VideoTestimonialsContent = lazy(

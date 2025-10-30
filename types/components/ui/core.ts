@@ -9,7 +9,7 @@ import { ReactNode } from "react";
 // BUTTON COMPONENTS
 // ============================================================================
 
-export interface CTAButtonProps {
+export interface LinkButtonProps {
   onClick: () => void;
   variant?: "primary" | "secondary" | "outline";
   children: ReactNode;
@@ -74,3 +74,5 @@ export interface SectionProps {
   padding?: "sm" | "md" | "lg" | "xl";
   containerSize?: "sm" | "md" | "lg" | "xl" | "full";
 }
+
+

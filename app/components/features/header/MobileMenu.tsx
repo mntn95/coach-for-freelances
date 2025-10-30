@@ -4,7 +4,7 @@ import Link from "next/link";
 import { NAV_ITEMS, BOOKING_PAGE, NAV_LABELS } from "@/constants/navigation";
 import type { Page } from "@/types";
 import { getPagePath } from "@/lib/navigation";
-import { Button } from "../../ui/button";
+import { Button } from "../../ui";
 
 interface MobileMenuProps {
   isOpen: boolean;

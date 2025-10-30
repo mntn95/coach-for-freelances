@@ -1,5 +1,21 @@
-import { Workshops } from "../components/pages/Workshops";
+import {
+  WorkshopsHeroSection,
+  BenefitsSection,
+  WorkshopsGridSection,
+  IncludedSection,
+  TestimonialsSection,
+  CTASection,
+} from "../components/features/workshops";
 
 export default function WorkshopsPage() {
-  return <Workshops />;
+  return (
+    <div>
+      <WorkshopsHeroSection />
+      <BenefitsSection />
+      <WorkshopsGridSection />
+      <IncludedSection />
+      <TestimonialsSection />
+      <CTASection />
+    </div>
+  );
 }

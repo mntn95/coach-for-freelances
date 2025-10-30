@@ -1,6 +1,6 @@
 import { workshopsPageData, workshopTestimonials } from "@/data/workshops";
 import { lazy, Suspense } from "react";
-import { AnimatedSection } from "../../ui/animated";
+import { AnimatedSection } from "../../ui";
 
 // Lazy load the testimonials content for better performance
 const TestimonialsContent = lazy(() => import("./TestimonialsContent"));

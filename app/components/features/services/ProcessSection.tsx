@@ -1,6 +1,5 @@
 import { servicesPageData } from "@/data/services";
-import { AnimatedSection } from "../../ui/animated";
-import { Section } from "../../ui/section";
+import { AnimatedSection, Section } from "../../ui";
 
 export function ProcessSection() {
   return (

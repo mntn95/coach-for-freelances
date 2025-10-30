@@ -4,7 +4,7 @@ import { bookingData } from "@/data/booking";
 import { isClient, safeDocument } from "@/lib/utils";
 import { Calendar } from "lucide-react";
 import { useEffect } from "react";
-import { AnimatedSection } from "../../ui/animated";
+import { AnimatedSection } from "../../ui";
 
 export function CalendlySection() {
   useEffect(() => {

@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Button } from "../../ui/button";
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../ui/card";
+} from "../../ui";
 import { ServiceCardProps } from "@/types/components/features/cards";
 
 export function ServiceCard({
@@ -61,9 +61,7 @@ export function ServiceCard({
             ))}
           </ul>
           <Link href="/booking" className="block">
-            <Button
-              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
-            >
+            <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
               Réserver
             </Button>
           </Link>

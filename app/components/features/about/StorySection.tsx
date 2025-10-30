@@ -1,6 +1,5 @@
 import { aboutData } from "@/data/about";
-import { AnimatedSection } from "../../ui/animated";
-import { Image } from "../../ui/image";
+import { AnimatedSection, Image } from "../../ui";
 
 export function StorySection() {
   return (

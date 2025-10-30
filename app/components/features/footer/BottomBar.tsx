@@ -1,6 +1,6 @@
 import { NAV_LABELS } from "@/constants/navigation";
 import { brandInfo } from "@/data/brand";
-import { NavigationButton } from "../../ui/navButton";
+import { NavigationButton } from "../../ui";
 
 export function BottomBar() {
   return (

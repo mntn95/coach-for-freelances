@@ -1,6 +1,6 @@
 import { aboutData } from "@/data/about";
 import { CheckCircle2 } from "lucide-react";
-import { AnimatedSection } from "../../ui/animated";
+import { AnimatedSection } from "../../ui";
 
 export function ExpertiseSection() {
   return (

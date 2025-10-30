@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/app/components/ui/button";
-import { NavigationItem } from "@/app/components/ui/navItem";
+import { Button, NavigationItem } from "@/app/components/ui";
 import { BOOKING_PAGE, NAV_ITEMS, NAV_LABELS } from "@/constants/navigation";
 import { getPagePath } from "@/lib/navigation";
 import type { Page } from "@/types";

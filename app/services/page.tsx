@@ -1,5 +1,19 @@
-import { Services } from "../components/pages/Services";
+import {
+  CTASection,
+  FAQSection,
+  ProcessSection,
+  ServicesGridSection,
+  ServicesHeroSection,
+} from "../components/features/services";
 
 export default function ServicesPage() {
-  return <Services />;
+  return (
+    <div>
+      <ServicesHeroSection />
+      <ServicesGridSection />
+      <ProcessSection />
+      <FAQSection />
+      <CTASection />
+    </div>
+  );
 }

@@ -1,6 +1,5 @@
 import { testimonialsPageData } from "@/data/testimonials";
-import { AnimatedSection } from "../../ui/animated";
-import { Section } from "../../ui/section";
+import { AnimatedSection, Section } from "../../ui";
 
 export function StatsSection() {
   return (

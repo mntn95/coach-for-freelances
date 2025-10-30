@@ -1,7 +1,7 @@
 "use client";
 
 import { workshops, workshopsPageData } from "@/data/workshops";
-import { AnimatedSection } from "../../ui/animated";
+import { AnimatedSection } from "../../ui";
 import { WorkshopCard } from "../cards/WorkshopCard";
 
 export function WorkshopsGridSection() {

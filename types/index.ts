@@ -51,7 +51,7 @@ export type {
 } from "./components/features/cards";
 
 export type {
-  CTAButtonProps,
+  LinkButtonProps,
   ImageProps,
   BadgeProps,
   ContainerProps,

@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { homeData } from "@/data/home";
-import { CTAButton } from "../../ui/CTAButton";
-import { ScrollReveal } from "../../ui/ScrollReveal";
+import { LinkButton, ScrollReveal } from "../../ui";
 
 export function CTASection() {
   return (
@@ -19,9 +18,9 @@ export function CTASection() {
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
           <Link href="/booking" className="inline-block">
-            <CTAButton variant="secondary" onClick={() => {}}>
+            <LinkButton variant="secondary" onClick={() => {}}>
               {homeData.cta.buttonText}
-            </CTAButton>
+            </LinkButton>
           </Link>
         </ScrollReveal>
       </div>

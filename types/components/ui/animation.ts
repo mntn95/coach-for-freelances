@@ -21,3 +21,6 @@ export interface ScrollRevealProps {
   direction?: "up" | "down" | "left" | "right";
   className?: string;
 }
+
+
+

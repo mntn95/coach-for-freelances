@@ -3,15 +3,15 @@
 import Link from "next/link";
 import { Calendar, Clock, Users } from "lucide-react";
 import { motion } from "motion/react";
-import { Badge } from "../../ui/badge";
-import { Button } from "../../ui/button";
 import {
+  Badge,
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../ui/card";
+} from "../../ui";
 import type { WorkshopCardProps } from "@/types";
 
 export function WorkshopCard({

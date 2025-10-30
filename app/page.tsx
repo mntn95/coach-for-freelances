@@ -1,5 +1,23 @@
-import { Home } from "./components/pages/Home";
+"use client";
+
+import {
+  CTASection,
+  HeroSection,
+  ProblemSection,
+  ServicesSection,
+  StatsSection,
+  TestimonialsSection,
+} from "./components/features/home";
 
 export default function HomePage() {
-  return <Home />;
+  return (
+    <div>
+      <HeroSection />
+      <StatsSection />
+      <ProblemSection />
+      <ServicesSection />
+      <TestimonialsSection />
+      <CTASection />
+    </div>
+  );
 }

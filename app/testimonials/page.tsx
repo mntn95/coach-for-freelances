@@ -1,6 +1,21 @@
-import { Testimonials } from "../components/pages/Testimonials";
+"use client";
+
+import {
+  TestimonialsHeroSection,
+  StatsSection,
+  TestimonialsGridSection,
+  SuccessStoriesSection,
+  VideoTestimonialsSection,
+} from "../components/features/testimonials";
 
 export default function TestimonialsPage() {
-  return <Testimonials />;
+  return (
+    <div>
+      <TestimonialsHeroSection />
+      <StatsSection />
+      <TestimonialsGridSection />
+      <SuccessStoriesSection />
+      <VideoTestimonialsSection />
+    </div>
+  );
 }
-

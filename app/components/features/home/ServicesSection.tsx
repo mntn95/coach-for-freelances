@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { homeData } from "@/data/home";
 import { featuredServices } from "@/data/services";
-import { ScrollReveal } from "../../ui/ScrollReveal";
+import { ScrollReveal } from "../../ui";
 import { ServiceCard } from "../cards/ServiceCard";
 
 export function ServicesSection() {
-
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

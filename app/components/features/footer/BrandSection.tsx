@@ -1,5 +1,5 @@
 import { brandInfo } from "@/data/brand";
-import { Image } from "../../ui/image";
+import { Image } from "../../ui";
 
 export function BrandSection() {
   return (

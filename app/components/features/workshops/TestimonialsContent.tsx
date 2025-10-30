@@ -1,5 +1,5 @@
-import { AnimatedSection } from "../../ui/animated";
 import { workshopTestimonials } from "@/data/workshops";
+import { AnimatedSection } from "../../ui";
 
 export default function TestimonialsContent() {
   return (
@@ -10,7 +10,9 @@ export default function TestimonialsContent() {
           delay={index * 0.1}
         >
           <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-purple-300 transition-colors">
-            <p className="text-gray-600 italic mb-4">&ldquo;{testimonial.text}&rdquo;</p>
+            <p className="text-gray-600 italic mb-4">
+              &ldquo;{testimonial.text}&rdquo;
+            </p>
             <div className="flex items-center">
               <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white mr-3">
                 {testimonial.name

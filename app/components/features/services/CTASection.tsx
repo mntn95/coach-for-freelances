@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import { servicesPageData } from "@/data/services";
-import { AnimatedSection } from "../../ui/animated";
-import { Section } from "../../ui/section";
+import { AnimatedSection, Section } from "../../ui";
 
 export function CTASection() {
-
   return (
     <Section background="gradient" containerSize="lg">
       <AnimatedSection>

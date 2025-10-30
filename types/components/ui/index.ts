@@ -5,7 +5,7 @@
 
 // Core UI Components
 export type {
-  CTAButtonProps,
+  LinkButtonProps,
   ImageProps,
   BadgeProps,
   ContainerProps,

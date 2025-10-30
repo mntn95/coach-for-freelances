@@ -3,8 +3,7 @@ import {
   testimonialsPageData,
 } from "@/data/testimonials";
 import { TestimonialCard } from "../cards/TestimonialCard";
-import { AnimatedSection } from "../../ui/animated";
-import { Section } from "../../ui/section";
+import { AnimatedSection, Section } from "../../ui";
 
 export function TestimonialsGridSection() {
   return (

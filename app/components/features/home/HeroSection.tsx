@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import { homeData } from "@/data/home";
-import { CTAButton } from "../../ui/CTAButton";
-import { ScrollReveal } from "../../ui/ScrollReveal";
-import { Image } from "../../ui/image";
+import { LinkButton, ScrollReveal, Image } from "../../ui";
 
 export function HeroSection() {
   return (
@@ -32,14 +30,14 @@ export function HeroSection() {
             <ScrollReveal delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/booking" className="inline-block">
-                  <CTAButton variant="secondary" onClick={() => {}}>
+                  <LinkButton variant="secondary" onClick={() => {}}>
                     {homeData.hero.primaryButton}
-                  </CTAButton>
+                  </LinkButton>
                 </Link>
                 <Link href="/about" className="inline-block">
-                  <CTAButton variant="outline" icon={false} onClick={() => {}}>
+                  <LinkButton variant="outline" icon={false} onClick={() => {}}>
                     {homeData.hero.secondaryButton}
-                  </CTAButton>
+                  </LinkButton>
                 </Link>
               </div>
             </ScrollReveal>

@@ -1,6 +1,6 @@
 import { NAV_LABELS } from "@/constants/navigation";
 import type { Page } from "@/types";
-import { NavigationButton } from "../../ui/navButton";
+import { NavigationButton } from "../../ui";
 
 export function NavigationSection() {
   const navigationItems: Array<{ page: Page; label: string }> = [

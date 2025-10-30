@@ -1,5 +1,5 @@
 import { legalData } from "@/data/legal";
-import { AnimatedSection } from "../../ui/animated";
+import { AnimatedSection } from "../../ui";
 
 export function PrivacyContentSection() {
   return (

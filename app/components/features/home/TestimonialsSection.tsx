@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { homeData } from "@/data/home";
 import { testimonials } from "@/data/testimonials";
-import { ScrollReveal } from "../../ui/ScrollReveal";
+import { ScrollReveal } from "../../ui";
 import { TestimonialCard } from "../cards/TestimonialCard";
 
 export function TestimonialsSection() {
