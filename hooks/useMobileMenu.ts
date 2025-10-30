@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 interface UseMobileMenuReturn {
   isOpen: boolean;
@@ -13,7 +13,7 @@ interface UseMobileMenuReturn {
  *
  * @returns Object containing menu state and control functions
  */
-export function useMobileMenu(): UseMobileMenuReturn {
+export const useMobileMenu = (): UseMobileMenuReturn => {
   const [isOpen, setIsOpen] = useState(false);
 
   const open = () => setIsOpen(true);
@@ -26,4 +26,4 @@ export function useMobileMenu(): UseMobileMenuReturn {
     close,
     toggle,
   };
-}
+};

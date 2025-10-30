@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   AboutHeroSection,
@@ -6,16 +6,16 @@ import {
   ValuesSection,
   ExpertiseSection,
   MissionSection,
-} from "../components/features/about";
+} from '../components/features/about';
 
-export default function AboutPage() {
-  return (
-    <div>
-      <AboutHeroSection />
-      <StorySection />
-      <ValuesSection />
-      <ExpertiseSection />
-      <MissionSection />
-    </div>
-  );
-}
+const AboutPage = () => (
+  <div>
+    <AboutHeroSection />
+    <StorySection />
+    <ValuesSection />
+    <ExpertiseSection />
+    <MissionSection />
+  </div>
+);
+
+export default AboutPage;

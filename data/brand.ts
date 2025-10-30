@@ -10,8 +10,8 @@ export interface BrandInfo {
 }
 
 export const brandInfo: BrandInfo = {
-  name: "Laura Bianchi",
+  name: 'Laura Bianchi',
   description:
-    "Coach professionnelle pour freelances IT qui veulent dépasser les 5k€/mois et trouver leur liberté.",
-  logo: "/logo.png",
+    'Coach professionnelle pour freelances IT qui veulent dépasser les 5k€/mois et trouver leur liberté.',
+  logo: '/logo.png',
 };

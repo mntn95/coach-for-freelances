@@ -3,8 +3,8 @@
  * Contains interfaces for card-based components
  */
 
-import { LucideIcon } from "lucide-react";
-import { WithOptionalDelay } from "../../common/shared";
+import { LucideIcon } from 'lucide-react';
+import { WithOptionalDelay } from '../../common/shared';
 
 export interface TestimonialCardProps extends WithOptionalDelay {
   isAnimatedOnLoad?: boolean;
@@ -31,6 +31,6 @@ export interface WorkshopCardProps extends WithOptionalDelay {
   date: string;
   duration: string;
   participants: string;
-  level: "Débutant" | "Intermédiaire" | "Avancé";
+  level: 'Débutant' | 'Intermédiaire' | 'Avancé';
   price: string;
 }

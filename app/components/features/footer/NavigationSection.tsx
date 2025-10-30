@@ -1,14 +1,14 @@
-import { NAV_LABELS } from "@/constants/navigation";
-import type { Page } from "@/types";
-import { NavigationButton } from "../../ui";
+import { NAV_LABELS } from '@/constants/navigation';
+import type { Page } from '@/types';
+import { NavigationButton } from '../../ui';
 
-export function NavigationSection() {
+const NavigationSection = () => {
   const navigationItems: Array<{ page: Page; label: string }> = [
-    { page: "about", label: NAV_LABELS.ABOUT },
-    { page: "services", label: NAV_LABELS.SERVICES },
-    { page: "workshops", label: NAV_LABELS.WORKSHOPS },
-    { page: "testimonials", label: NAV_LABELS.TESTIMONIALS },
-    { page: "booking", label: NAV_LABELS.BOOKING },
+    { page: 'about', label: NAV_LABELS.ABOUT },
+    { page: 'services', label: NAV_LABELS.SERVICES },
+    { page: 'workshops', label: NAV_LABELS.WORKSHOPS },
+    { page: 'testimonials', label: NAV_LABELS.TESTIMONIALS },
+    { page: 'booking', label: NAV_LABELS.BOOKING },
   ];
 
   return (
@@ -23,4 +23,6 @@ export function NavigationSection() {
       </ul>
     </div>
   );
-}
+};
+
+export { NavigationSection };

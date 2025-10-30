@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { Calendar, Clock, Users } from "lucide-react";
-import { motion } from "motion/react";
+import type { WorkshopCardProps } from '@/types';
+import { Calendar, Clock, Users } from 'lucide-react';
+import Link from 'next/link';
 import {
   Badge,
   Button,
@@ -12,10 +12,9 @@ import {
   CardHeader,
   CardTitle,
   ScrollReveal,
-} from "../../ui";
-import type { WorkshopCardProps } from "@/types";
+} from '../../ui';
 
-export function WorkshopCard({
+const WorkshopCard = ({
   isAnimatedOnLoad,
   title,
   description,
@@ -25,11 +24,11 @@ export function WorkshopCard({
   level,
   price,
   delay = 0,
-}: WorkshopCardProps) {
+}: WorkshopCardProps) => {
   const levelColors = {
-    Débutant: "bg-green-100 text-green-700",
-    Intermédiaire: "bg-yellow-100 text-yellow-700",
-    Avancé: "bg-red-100 text-red-700",
+    Débutant: 'bg-green-100 text-green-700',
+    Intermédiaire: 'bg-yellow-100 text-yellow-700',
+    Avancé: 'bg-red-100 text-red-700',
   };
 
   return (
@@ -39,8 +38,7 @@ export function WorkshopCard({
           <div className="flex justify-between items-start mb-2">
             <Badge
               className={
-                levelColors[level as keyof typeof levelColors] ||
-                "bg-gray-100 text-gray-700"
+                levelColors[level as keyof typeof levelColors] || 'bg-gray-100 text-gray-700'
               }
             >
               {level}
@@ -77,4 +75,6 @@ export function WorkshopCard({
       </Card>
     </ScrollReveal>
   );
-}
+};
+
+export { WorkshopCard };

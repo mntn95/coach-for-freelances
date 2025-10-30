@@ -1,9 +1,7 @@
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
 /**
  * SSR (Server-Side Rendering) utility functions
@@ -14,14 +12,14 @@ export function cn(...inputs: ClassValue[]) {
  * Check if code is running on the client side
  * @returns true if running in browser, false if running on server
  */
-export const isClient = typeof window !== "undefined";
+export const isClient = typeof window !== 'undefined';
 
 /**
  * Safely scroll to the top of the page
  * Only executes on the client side to prevent SSR errors
  * @param behavior - The scroll behavior (default: 'smooth')
  */
-export const safeScrollToTop = (behavior: ScrollBehavior = "smooth") => {
+export const safeScrollToTop = (behavior: ScrollBehavior = 'smooth') => {
   if (isClient) {
     window.scrollTo({ top: 0, behavior });
   }
@@ -32,6 +30,5 @@ export const safeScrollToTop = (behavior: ScrollBehavior = "smooth") => {
  * Returns undefined if not on client side
  * @returns Document object or undefined
  */
-export const safeDocument = (): Document | undefined => {
-  return typeof document !== "undefined" ? document : undefined;
-};
+export const safeDocument = (): Document | undefined =>
+  typeof document !== 'undefined' ? document : undefined;

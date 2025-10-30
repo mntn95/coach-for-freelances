@@ -4,16 +4,16 @@ import {
   ProcessSection,
   ServicesGridSection,
   ServicesHeroSection,
-} from "../components/features/services";
+} from '../components/features/services';
 
-export default function ServicesPage() {
-  return (
-    <div>
-      <ServicesHeroSection />
-      <ServicesGridSection />
-      <ProcessSection />
-      <FAQSection />
-      <CTASection />
-    </div>
-  );
-}
+const ServicesPage = () => (
+  <div>
+    <ServicesHeroSection />
+    <ServicesGridSection />
+    <ProcessSection />
+    <FAQSection />
+    <CTASection />
+  </div>
+);
+
+export default ServicesPage;

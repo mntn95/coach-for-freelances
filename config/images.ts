@@ -10,7 +10,7 @@ const IMAGE_CONFIG = {
     MEDIUM: 75,
     LOW: 60,
   },
-  
+
   // Priority settings for above-the-fold images
   PRIORITY: {
     HERO: true,
@@ -18,13 +18,13 @@ const IMAGE_CONFIG = {
     ABOVE_FOLD: true,
     BELOW_FOLD: false,
   },
-  
+
   // Loading settings
   LOADING: {
     EAGER: 'eager' as const,
     LAZY: 'lazy' as const,
   },
-  
+
   // Common sizes for responsive images
   SIZES: {
     LOGO: '40px',
@@ -33,10 +33,11 @@ const IMAGE_CONFIG = {
     CARD_GRID: '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw',
     FULL_WIDTH: '100vw',
   },
-  
+
   // Placeholder settings
   PLACEHOLDER: {
-    BLUR_DATA_URL: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k=',
+    BLUR_DATA_URL:
+      'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k=',
   },
 } as const;
 
@@ -60,7 +61,7 @@ export const getImageProps = (context: 'hero' | 'logo' | 'card' | 'below-fold') 
         quality: IMAGE_CONFIG.QUALITY.HIGH,
         loading: IMAGE_CONFIG.LOADING.EAGER,
       };
-    
+
     case 'logo':
       return {
         ...baseProps,
@@ -68,21 +69,21 @@ export const getImageProps = (context: 'hero' | 'logo' | 'card' | 'below-fold') 
         quality: IMAGE_CONFIG.QUALITY.HIGH,
         loading: IMAGE_CONFIG.LOADING.EAGER,
       };
-    
+
     case 'card':
       return {
         ...baseProps,
         priority: IMAGE_CONFIG.PRIORITY.BELOW_FOLD,
         loading: IMAGE_CONFIG.LOADING.LAZY,
       };
-    
+
     case 'below-fold':
       return {
         ...baseProps,
         priority: IMAGE_CONFIG.PRIORITY.BELOW_FOLD,
         loading: IMAGE_CONFIG.LOADING.LAZY,
       };
-    
+
     default:
       return baseProps;
   }

@@ -10,7 +10,7 @@ export interface ContactInfo {
 }
 
 export const contactInfo: ContactInfo = {
-  email: "contact@laurabianchi.fr",
-  phone: "+33 6 XX XX XX XX",
-  linkedin: "https://linkedin.com/in/laurabianchi",
+  email: 'contact@laurabianchi.fr',
+  phone: '+33 6 XX XX XX XX',
+  linkedin: 'https://linkedin.com/in/laurabianchi',
 };

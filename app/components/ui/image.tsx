@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { getImageProps } from "@/config/images";
-import NextImage from "next/image";
-import React, { useState } from "react";
-import { ImageProps } from "@/types";
+import { getImageProps } from '@/config/images';
+import { ImageProps } from '@/types';
+import NextImage from 'next/image';
+import { useState } from 'react';
 
 const ERROR_IMG_SRC =
-  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg==";
+  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg==';
 
-export function Image({
+export const Image = ({
   src,
   alt,
-  className = "",
+  className = '',
   width,
   height,
   fill = false,
@@ -20,8 +20,8 @@ export function Image({
   quality,
   style,
   onError,
-  context = "below-fold",
-}: ImageProps) {
+  context = 'below-fold',
+}: ImageProps) => {
   const [didError, setDidError] = useState(false);
 
   // Get optimized props based on context
@@ -39,6 +39,7 @@ export function Image({
         style={style}
       >
         <div className="flex items-center justify-center w-full h-full">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={ERROR_IMG_SRC}
             alt="Error loading image"
@@ -80,7 +81,7 @@ export function Image({
       return {
         fill: true,
         sizes,
-        className: "object-cover",
+        className: 'object-cover',
       };
     }
 
@@ -104,4 +105,4 @@ export function Image({
 
   // Single NextImage component for all cases
   return <NextImage {...commonProps} {...conditionalProps} />;
-}
+};

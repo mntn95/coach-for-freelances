@@ -3,7 +3,7 @@
  * Contains interfaces for animation-related components
  */
 
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 // ============================================================================
 // ANIMATED COMPONENTS

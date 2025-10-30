@@ -1,3 +1,3 @@
-export * from "./LegalHeroSection";
-export * from "./LegalContentSection";
-export * from "./PrivacyContentSection";
+export * from './LegalHeroSection';
+export * from './LegalContentSection';
+export * from './PrivacyContentSection';

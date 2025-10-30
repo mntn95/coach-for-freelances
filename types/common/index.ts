@@ -4,11 +4,7 @@
  */
 
 // Shared data types
-export * from "./shared";
+export * from './shared';
 
 // Utility types
-export * from "./utils";
-
-
-
-
+export * from './utils';

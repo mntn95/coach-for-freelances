@@ -1,33 +1,29 @@
-"use client";
+'use client';
 
-import { allServices, servicesPageData } from "@/data/services";
-import { ServiceCard } from "../cards/ServiceCard";
-import { ScrollReveal, Section } from "../../ui";
+import { allServices, servicesPageData } from '@/data/services';
+import { ServiceCard } from '../cards/ServiceCard';
+import { ScrollReveal, Section } from '../../ui';
 
-export function ServicesGridSection() {
-  return (
-    <Section containerSize="lg">
-      <ScrollReveal animatesInView={false}>
-        <div className="text-center mb-16">
-          <h2 className="text-gray-900 mb-4">
-            {servicesPageData.services.title}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {servicesPageData.services.subtitle}
-          </p>
-        </div>
-      </ScrollReveal>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {allServices.map((service, index) => (
-          <ServiceCard
-            key={`service-${service.title}-${index}`}
-            {...service}
-            delay={index * 0.1}
-            isAnimatedOnLoad={index <= 2}
-          />
-        ))}
+export const ServicesGridSection = () => (
+  <Section containerSize="lg">
+    <ScrollReveal animatesInView={false}>
+      <div className="text-center mb-16">
+        <h2 className="text-gray-900 mb-4">{servicesPageData.services.title}</h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          {servicesPageData.services.subtitle}
+        </p>
       </div>
-    </Section>
-  );
-}
+    </ScrollReveal>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {allServices.map((service, index) => (
+        <ServiceCard
+          key={`service-${service.title}-${index}`}
+          {...service}
+          delay={index * 0.1}
+          isAnimatedOnLoad={index <= 2}
+        />
+      ))}
+    </div>
+  </Section>
+);

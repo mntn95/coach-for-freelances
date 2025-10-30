@@ -1,37 +1,36 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { getPagePath } from "@/lib/navigation";
-import type { Page } from "@/types";
+import Link from 'next/link';
+import { getPagePath } from '@/lib/navigation';
+import type { Page } from '@/types';
 
 interface NavigationItemProps {
   page: Page;
   label: string;
   currentPage: Page | null;
-  variant?: "desktop" | "mobile";
+  variant?: 'desktop' | 'mobile';
 }
 
-export function NavigationItem({
+export const NavigationItem = ({
   page,
   label,
   currentPage,
-  variant = "desktop",
-}: NavigationItemProps) {
+  variant = 'desktop',
+}: NavigationItemProps) => {
   const getClasses = () => {
-    const baseClasses = "transition-colors";
+    const baseClasses = 'transition-colors';
     const isActive = currentPage === page;
 
-    if (variant === "desktop") {
+    if (variant === 'desktop') {
       return `${baseClasses} ${
-        isActive ? "text-purple-600" : "text-gray-600 hover:text-purple-600"
-      }`;
-    } else {
-      return `${baseClasses} block w-full text-left px-4 py-2 ${
-        isActive
-          ? "text-purple-600 bg-purple-50"
-          : "text-gray-600 hover:text-purple-600 hover:bg-gray-50"
+        isActive ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
       }`;
     }
+    return `${baseClasses} block w-full text-left px-4 py-2 ${
+      isActive
+        ? 'text-purple-600 bg-purple-50'
+        : 'text-gray-600 hover:text-purple-600 hover:bg-gray-50'
+    }`;
   };
 
   return (
@@ -43,4 +42,4 @@ export function NavigationItem({
       {label}
     </Link>
   );
-}
+};

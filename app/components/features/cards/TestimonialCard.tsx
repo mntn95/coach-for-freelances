@@ -1,15 +1,8 @@
-import { Star } from "lucide-react";
-import { motion } from "motion/react";
-import {
-  Avatar,
-  AvatarFallback,
-  Card,
-  CardContent,
-  ScrollReveal,
-} from "../../ui";
-import { TestimonialCardProps } from "@/types";
+import { TestimonialCardProps } from '@/types';
+import { Star } from 'lucide-react';
+import { Avatar, AvatarFallback, Card, CardContent, ScrollReveal } from '../../ui';
 
-export function TestimonialCard({
+const TestimonialCard = ({
   name,
   role,
   company,
@@ -17,11 +10,11 @@ export function TestimonialCard({
   isAnimatedOnLoad,
   rating,
   delay = 0,
-}: TestimonialCardProps) {
+}: TestimonialCardProps) => {
   const initials = name
-    .split(" ")
+    .split(' ')
     .map((n) => n[0])
-    .join("");
+    .join('');
 
   return (
     <ScrollReveal animatesInView={!isAnimatedOnLoad} delay={delay}>
@@ -33,11 +26,7 @@ export function TestimonialCard({
               <Star
                 key={i}
                 size={16}
-                className={
-                  i < rating
-                    ? "fill-yellow-400 text-yellow-400"
-                    : "text-gray-300"
-                }
+                className={i < rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}
               />
             ))}
           </div>
@@ -63,4 +52,6 @@ export function TestimonialCard({
       </Card>
     </ScrollReveal>
   );
-}
+};
+
+export { TestimonialCard };

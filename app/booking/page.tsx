@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   BookingHeroSection,
@@ -6,16 +6,16 @@ import {
   ExpectationsSection,
   FAQSection,
   CalendlySection,
-} from "../components/features/booking";
+} from '../components/features/booking';
 
-export default function BookingPage() {
-  return (
-    <div>
-      <BookingHeroSection />
-      <InfoSection />
-      <ExpectationsSection />
-      <CalendlySection />
-      <FAQSection />
-    </div>
-  );
-}
+const BookingPage = () => (
+  <div>
+    <BookingHeroSection />
+    <InfoSection />
+    <ExpectationsSection />
+    <CalendlySection />
+    <FAQSection />
+  </div>
+);
+
+export default BookingPage;

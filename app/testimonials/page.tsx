@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   TestimonialsHeroSection,
@@ -6,16 +6,16 @@ import {
   TestimonialsGridSection,
   SuccessStoriesSection,
   VideoTestimonialsSection,
-} from "../components/features/testimonials";
+} from '../components/features/testimonials';
 
-export default function TestimonialsPage() {
-  return (
-    <div>
-      <TestimonialsHeroSection />
-      <StatsSection />
-      <TestimonialsGridSection />
-      <SuccessStoriesSection />
-      <VideoTestimonialsSection />
-    </div>
-  );
-}
+const TestimonialsPage = () => (
+  <div>
+    <TestimonialsHeroSection />
+    <StatsSection />
+    <TestimonialsGridSection />
+    <SuccessStoriesSection />
+    <VideoTestimonialsSection />
+  </div>
+);
+
+export default TestimonialsPage;

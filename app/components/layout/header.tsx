@@ -1,28 +1,28 @@
-"use client";
+'use client';
 
-import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
-import { useMobileMenu } from "@/hooks/useMobileMenu";
-import type { Page } from "@/types";
-import { DesktopNavigation } from "../features/header/DesktopNavigation";
-import { HeaderBrandSection } from "../features/header/HeaderBrandSection";
-import { MobileMenu } from "../features/header/MobileMenu";
+import { usePathname } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
+import { useMobileMenu } from '@/hooks/useMobileMenu';
+import type { Page } from '@/types';
+import { DesktopNavigation } from '../features/header/DesktopNavigation';
+import { HeaderBrandSection } from '../features/header/HeaderBrandSection';
+import { MobileMenu } from '../features/header/MobileMenu';
 
-export function Header() {
+export const Header = () => {
   const pathname = usePathname();
   const { isOpen, toggle } = useMobileMenu();
 
   // Déterminer la page active depuis le pathname
   const getCurrentPage = (): Page | null => {
-    if (pathname === "/") return "home";
+    if (pathname === '/') return 'home';
     const page = pathname.slice(1);
     const validPages: Page[] = [
-      "about",
-      "services",
-      "workshops",
-      "testimonials",
-      "booking",
-      "legal",
+      'about',
+      'services',
+      'workshops',
+      'testimonials',
+      'booking',
+      'legal',
     ];
     return validPages.includes(page as Page) ? (page as Page) : null;
   };
@@ -39,18 +39,14 @@ export function Header() {
           <button
             onClick={toggle}
             className="md:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2"
-            aria-label={isOpen ? "Close mobile menu" : "Open mobile menu"}
+            aria-label={isOpen ? 'Close mobile menu' : 'Open mobile menu'}
             aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-        <MobileMenu
-          isOpen={isOpen}
-          onToggle={toggle}
-          currentPage={currentPage}
-        />
+        <MobileMenu isOpen={isOpen} onToggle={toggle} currentPage={currentPage} />
       </div>
     </header>
   );
-}
+};

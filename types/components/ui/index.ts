@@ -4,16 +4,10 @@
  */
 
 // Core UI Components
-export type {
-  LinkButtonProps,
-  ImageProps,
-  BadgeProps,
-  ContainerProps,
-  SectionProps,
-} from "./core";
+export type { LinkButtonProps, ImageProps, BadgeProps, ContainerProps, SectionProps } from './core';
 
 // Animation Components
-export type { AnimatedSectionProps, ScrollRevealProps } from "./animation";
+export type { AnimatedSectionProps, ScrollRevealProps } from './animation';
 
 // Navigation Components
-export type { NavigationButtonProps, NavigationItemProps } from "./navigation";
+export type { NavigationButtonProps, NavigationItemProps } from './navigation';

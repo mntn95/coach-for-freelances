@@ -1,21 +1,20 @@
-import { ArrowRight } from "lucide-react";
-import { Button } from "./button";
-import { LinkButtonProps } from "@/types";
+import { ArrowRight } from 'lucide-react';
+import { Button } from './button';
+import { LinkButtonProps } from '@/types';
 
-export function LinkButton({
+export const LinkButton = ({
   onClick,
-  variant = "primary",
+  variant = 'primary',
   children,
   icon = true,
-  className = "",
-}: LinkButtonProps) {
+  className = '',
+}: LinkButtonProps) => {
   const variants = {
     primary:
-      "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white hover:text-white",
+      'bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white hover:text-white',
     secondary:
-      "bg-white text-purple-600 hover:bg-gray-50 hover:text-purple-600 border-2 border-purple-600",
-    outline:
-      "border-2 border-white text-white hover:bg-white hover:text-purple-600",
+      'bg-white text-purple-600 hover:bg-gray-50 hover:text-purple-600 border-2 border-purple-600',
+    outline: 'border-2 border-white text-white hover:bg-white hover:text-purple-600',
   };
 
   return (
@@ -27,11 +26,8 @@ export function LinkButton({
     >
       {children}
       {icon && (
-        <ArrowRight
-          className="ml-2 group-hover:translate-x-1 transition-transform"
-          size={20}
-        />
+        <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
       )}
     </Button>
   );
-}
+};

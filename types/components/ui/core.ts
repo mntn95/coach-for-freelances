@@ -3,7 +3,7 @@
  * Contains interfaces for basic UI components
  */
 
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 // ============================================================================
 // BUTTON COMPONENTS
@@ -11,7 +11,7 @@ import { ReactNode } from "react";
 
 export interface LinkButtonProps {
   onClick: () => void;
-  variant?: "primary" | "secondary" | "outline";
+  variant?: 'primary' | 'secondary' | 'outline';
   children: ReactNode;
   icon?: boolean;
   className?: string;
@@ -33,7 +33,7 @@ export interface ImageProps {
   quality?: number;
   style?: React.CSSProperties;
   onError?: () => void;
-  context?: "hero" | "logo" | "card" | "below-fold";
+  context?: 'hero' | 'logo' | 'card' | 'below-fold';
 }
 
 // ============================================================================
@@ -42,14 +42,8 @@ export interface ImageProps {
 
 export interface BadgeProps {
   children: ReactNode;
-  variant?:
-    | "default"
-    | "gradient"
-    | "outline"
-    | "success"
-    | "warning"
-    | "error";
-  size?: "sm" | "md" | "lg";
+  variant?: 'default' | 'gradient' | 'outline' | 'success' | 'warning' | 'error';
+  size?: 'sm' | 'md' | 'lg';
   className?: string;
 }
 
@@ -60,7 +54,7 @@ export interface BadgeProps {
 export interface ContainerProps {
   children: ReactNode;
   className?: string;
-  size?: "sm" | "md" | "lg" | "xl" | "full";
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
 }
 
 // ============================================================================
@@ -70,10 +64,7 @@ export interface ContainerProps {
 export interface SectionProps {
   children: ReactNode;
   className?: string;
-  background?: "white" | "gray" | "gradient" | "transparent";
-  padding?: "sm" | "md" | "lg" | "xl";
-  containerSize?: "sm" | "md" | "lg" | "xl" | "full";
+  background?: 'white' | 'gray' | 'gradient' | 'transparent';
+  padding?: 'sm' | 'md' | 'lg' | 'xl';
+  containerSize?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
 }
-
-
-

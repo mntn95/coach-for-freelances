@@ -3,7 +3,7 @@
  * Contains interfaces for feature-specific components
  */
 
-import { Page } from "../../navigation";
+import { Page } from '../../navigation';
 
 export interface MobileMenuProps {
   isOpen: boolean;

@@ -5,17 +5,17 @@ import {
   IncludedSection,
   TestimonialsSection,
   CTASection,
-} from "../components/features/workshops";
+} from '../components/features/workshops';
 
-export default function WorkshopsPage() {
-  return (
-    <div>
-      <WorkshopsHeroSection />
-      <BenefitsSection />
-      <WorkshopsGridSection />
-      <IncludedSection />
-      <TestimonialsSection />
-      <CTASection />
-    </div>
-  );
-}
+const WorkshopsPage = () => (
+  <div>
+    <WorkshopsHeroSection />
+    <BenefitsSection />
+    <WorkshopsGridSection />
+    <IncludedSection />
+    <TestimonialsSection />
+    <CTASection />
+  </div>
+);
+
+export default WorkshopsPage;

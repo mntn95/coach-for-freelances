@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   CTASection,
@@ -7,17 +7,17 @@ import {
   ServicesSection,
   StatsSection,
   TestimonialsSection,
-} from "./components/features/home";
+} from './components/features/home';
 
-export default function HomePage() {
-  return (
-    <div>
-      <HeroSection />
-      <StatsSection />
-      <ProblemSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <CTASection />
-    </div>
-  );
-}
+const HomePage = () => (
+  <div>
+    <HeroSection />
+    <StatsSection />
+    <ProblemSection />
+    <ServicesSection />
+    <TestimonialsSection />
+    <CTASection />
+  </div>
+);
+
+export default HomePage;
