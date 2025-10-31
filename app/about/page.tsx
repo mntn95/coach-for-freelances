@@ -1,4 +1,4 @@
-'use client';
+import type { Metadata } from 'next';
 
 import {
   AboutHeroSection,
@@ -19,3 +19,10 @@ const AboutPage = () => (
 );
 
 export default AboutPage;
+
+export const metadata: Metadata = {
+  title: 'À propos',
+  description:
+    'Découvrez le parcours, la mission et les valeurs de Laura Bianchi, coach pour freelances IT.',
+  alternates: { canonical: '/about' },
+};

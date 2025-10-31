@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import {
   WorkshopsHeroSection,
   BenefitsSection,
@@ -19,3 +20,10 @@ const WorkshopsPage = () => (
 );
 
 export default WorkshopsPage;
+
+export const metadata: Metadata = {
+  title: 'Ateliers',
+  description:
+    'Ateliers pratiques pour freelances IT : prospection, positionnement, pricing et plus.',
+  alternates: { canonical: '/workshops' },
+};

@@ -1,4 +1,4 @@
-'use client';
+import type { Metadata } from 'next';
 
 import { legalData } from '@/data/legal';
 import {
@@ -36,3 +36,9 @@ const LegalPage = () => (
 );
 
 export default LegalPage;
+
+export const metadata: Metadata = {
+  title: 'Mentions légales & Confidentialité',
+  description: 'Mentions légales, politique de confidentialité et informations réglementaires.',
+  alternates: { canonical: '/legal' },
+};

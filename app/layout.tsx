@@ -16,9 +16,64 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Laura Bianchi - Coach pour Freelances',
+  metadataBase: new URL('https://main.d3rz0kte5h5b6q.amplifyapp.com'),
+  title: {
+    default: 'Laura Bianchi - Coach pour Freelances',
+    template: '%s | Laura Bianchi',
+  },
   description:
     'Coach professionnelle pour freelances IT qui veulent dépasser les 5k€/mois et trouver leur liberté.',
+  keywords: [
+    'coach freelances',
+    'coaching freelance IT',
+    'tarifs freelances',
+    'trouver clients freelance',
+    'prospection freelance',
+    'business freelance',
+    'indépendant',
+    'France',
+  ],
+  authors: [{ name: 'Laura Bianchi' }],
+  creator: 'Laura Bianchi',
+  publisher: 'Laura Bianchi',
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    siteName: 'Laura Bianchi',
+    url: '/',
+    title: 'Laura Bianchi - Coach pour Freelances',
+    description:
+      'Coach professionnelle pour freelances IT qui veulent dépasser les 5k€/mois et trouver leur liberté.',
+    images: ['/opengraph-image'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Laura Bianchi - Coach pour Freelances',
+    description:
+      'Coach professionnelle pour freelances IT qui veulent dépasser les 5k€/mois et trouver leur liberté.',
+    images: ['/twitter-image'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  category: 'business',
+  icons: {
+    icon: [{ url: '/favicon.ico' }],
+    apple: [{ url: '/logo.png' }],
+  },
+  manifest: '/manifest.webmanifest',
+};
+
+export const viewport = {
+  themeColor: '#ffffff',
 };
 
 const RootLayout = ({
@@ -35,6 +90,35 @@ const RootLayout = ({
       <main className="pt-20">{children}</main>
       <Footer />
       <Toaster />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Laura Bianchi',
+            url: 'https://main.d3rz0kte5h5b6q.amplifyapp.com',
+            logo: 'https://main.d3rz0kte5h5b6q.amplifyapp.com/logo.png',
+            sameAs: ['https://www.linkedin.com/in/placeholder', 'https://x.com/placeholder'],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Laura Bianchi - Coach pour Freelances',
+            url: 'https://main.d3rz0kte5h5b6q.amplifyapp.com',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: 'https://main.d3rz0kte5h5b6q.amplifyapp.com/search?q={search_term_string}',
+              'query-input': 'required name=search_term_string',
+            },
+          }),
+        }}
+      />
     </body>
   </html>
 );
